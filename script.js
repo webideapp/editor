@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // On page load, check for saved theme in localStorage or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // On page load, check for saved theme in localStorage or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
     // Event listener for the toggle button
