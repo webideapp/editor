@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // On page load, check for saved theme in localStorage or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // On page load, check for saved theme in localStorage or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
     // Event listener for the toggle button
@@ -137,15 +137,15 @@ if (insertStarter) {
         h1 { margin: 0; font-size: 2.5rem; background: linear-gradient(to right, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; }
         p { color: #888; margin-top: 10px; }
         .btn { padding: 12px 24px; background: #222; border: 1px solid #444; border-radius: 30px; color: white; text-decoration: none; margin-top: 30px; transition: 0.3s; font-weight: 600; }
-        .btn:hover { background: #333; border-color: #fff; transform: translateY(-2px); }
+        .btn:active { transform: scale(0.95); }
     </style>
 </head>
 <body>
-    <div class="profile"></div>
-    <h1>Alex Creator</h1>
-    <p>Mobile Web Developer</p>
-    <a href="#" class="btn">View Work</a>
-    <button onclick="alert('Welcome to my portfolio!')" class="btn" style="margin-left: 10px; background: #3333ff; border-color: #3333ff;">Say Hello</button>
+    <div class="card">
+        <h1>Web IDE</h1>
+        <p>Edit code live.</p>
+        <button onclick="alert('Hello!')">Click Me</button>
+    </div>
 </body>
 </html>`;
         if (demoEditor) {
@@ -177,9 +177,9 @@ if (downloadZip) {
 const header = document.getElementById('mainHeader');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+        header.classList.add('scrolled'); // Use the new 'scrolled' class
     } else {
-        header.classList.remove('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+        header.classList.remove('scrolled');
     }
 });
 
@@ -228,5 +228,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 answerDiv.style.maxHeight = '0';
             }
         });
+    });
+});
+
+// Scroll Animation Logic (Intersection Observer)
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollAnimatedElements = document.querySelectorAll('.scroll-fade-in');
+
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add delay if specified, otherwise animate immediately
+                const delay = entry.target.dataset.scrollDelay ? parseInt(entry.target.dataset.scrollDelay) : 0;
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, delay);
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, observerOptions);
+
+    scrollAnimatedElements.forEach(element => {
+        observer.observe(element);
     });
 });
