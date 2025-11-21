@@ -1,219 +1,232 @@
-// Helper: set current year
+// Theme Switcher Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const htmlRoot = document.documentElement; // Use documentElement for <html>
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Function to apply theme based on 'light' or 'dark' string
+    const applyTheme = (theme) => {
+        if (theme === 'light') {
+            htmlRoot.classList.add('light');
+            if (darkIcon) darkIcon.classList.add('hidden');
+            if (lightIcon) lightIcon.classList.remove('hidden');
+        } else {
+            htmlRoot.classList.remove('light');
+            if (darkIcon) darkIcon.classList.remove('hidden');
+            if (lightIcon) lightIcon.classList.add('hidden');
+        }
+    };
+
+    // On page load, check for saved theme in localStorage or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    // Event listener for the toggle button
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            const isLight = htmlRoot.classList.contains('light');
+            const newTheme = isLight ? 'dark' : 'light';
+            
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+    }
+});
+
+                              // Date
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Hero mini editor
-const heroEditor = document.getElementById('heroEditor');
-const heroPreview = document.getElementById('heroPreview');
-const runHero = document.getElementById('runHero');
+// Mobile Menu Logic
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const closeMobileMenuButton = document.getElementById('closeMobileMenuButton');
+const mobileLinks = document.querySelectorAll('[data-menu-link]');
 
-const setHero = () => {
-    heroPreview.srcdoc = heroEditor.value;
-};
+function toggleMenu() {
+    const isHidden = mobileMenuOverlay.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenuOverlay.classList.remove('hidden');
+        // tiny timeout to allow display block to render before opacity transition
+        setTimeout(() => mobileMenuOverlay.classList.remove('opacity-0'), 10);
+        document.body.style.overflow = 'hidden';
+    } else {
+        mobileMenuOverlay.classList.add('opacity-0');
+        setTimeout(() => mobileMenuOverlay.classList.add('hidden'), 300);
+        document.body.style.overflow = '';
+    }
+}
 
-// Initialize the hero preview on page load
-document.addEventListener('DOMContentLoaded', setHero);
-runHero.addEventListener('click', setHero);
+if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMenu);
+if (closeMobileMenuButton) closeMobileMenuButton.addEventListener('click', toggleMenu);
 
-// Demo editor actions
+mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+});
+
+// Spotlight Effect for Cards
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.spotlight-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+});
+
+// Demo Editor Logic
 const demoEditor = document.getElementById('demoEditor');
 const demoPreview = document.getElementById('demoPreview');
-const refreshDemo = document.getElementById('refreshDemo');
-const openWindow = document.getElementById('openWindow');
 const insertStarter = document.getElementById('insertStarter');
 const downloadZip = document.getElementById('downloadZip');
 
-const runDemo = () => {
-    demoPreview.srcdoc = demoEditor.value;
-};
+// Tab Elements
+const tabEditor = document.getElementById('tabEditor');
+const tabPreview = document.getElementById('tabPreview');
+const viewEditor = document.getElementById('viewEditor');
+const viewPreview = document.getElementById('viewPreview');
 
-// Initialize the demo preview on page load
-document.addEventListener('DOMContentLoaded', runDemo);
-refreshDemo.addEventListener('click', runDemo);
+function updatePreview() {
+    if (!demoEditor || !demoPreview) return;
+    const code = demoEditor.value;
+    demoPreview.srcdoc = code;
+}
 
-openWindow.addEventListener('click', () => {
-    const newWin = window.open();
-    if (newWin) {
-        newWin.document.open();
-        newWin.document.write(demoEditor.value);
-        newWin.document.close();
+function switchTab(tabName) {
+    if (tabName === 'editor') {
+        viewEditor.classList.remove('hidden');
+        viewPreview.classList.add('hidden');
+        
+        tabEditor.classList.add('bg-white/10', 'text-white', 'shadow-sm');
+        tabEditor.classList.remove('text-white/50');
+        
+        tabPreview.classList.remove('bg-white/10', 'text-white', 'shadow-sm');
+        tabPreview.classList.add('text-white/50');
     } else {
-        alert('Please allow popups to open the preview in a new tab.');
+        updatePreview(); // Run code on switch
+        viewEditor.classList.add('hidden');
+        viewPreview.classList.remove('hidden');
+        
+        tabPreview.classList.add('bg-white/10', 'text-white', 'shadow-sm');
+        tabPreview.classList.remove('text-white/50');
+        
+        tabEditor.classList.remove('bg-white/10', 'text-white', 'shadow-sm');
+        tabEditor.classList.add('text-white/50');
     }
-});
+}
 
-insertStarter.addEventListener('click', () => {
-    const starter = `<!doctype html>
-<html>
+if (tabEditor) tabEditor.addEventListener('click', () => switchTab('editor'));
+if (tabPreview) tabPreview.addEventListener('click', () => switchTab('preview'));
+
+if (insertStarter) {
+    insertStarter.addEventListener('click', () => {
+        const starterCode = `<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>My Mobile Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
     <style>
-        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; background: #0b1220; color: #e5edff; }
-        .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px; }
-        .btn { background: linear-gradient(90deg,#6366f1,#22d3ee); color: #0b1220; border-radius: 999px; padding: 10px 16px; font-weight: 800; display: inline-block; text-decoration: none; }
-        .card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); border-radius: 16px; padding: 16px; }
+        body { font-family: sans-serif; margin: 0; background: #111; color: #eee; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        .profile { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(45deg, #ff00cc, #3333ff); margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { margin: 0; font-size: 2.5rem; background: linear-gradient(to right, #ff00cc, #3333ff); -webkit-background-clip: text; color: transparent; }
+        p { color: #888; margin-top: 10px; }
+        .btn { padding: 12px 24px; background: #222; border: 1px solid #444; border-radius: 30px; color: white; text-decoration: none; margin-top: 30px; transition: 0.3s; font-weight: 600; }
+        .btn:hover { background: #333; border-color: #fff; transform: translateY(-2px); }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <h1>Built with Web IDE ✨</h1>
-        <p>Create beautiful mobile sites quickly, right from your phone.</p>
-        <a class="btn" href="#">Primary Button</a>
-        <div style="height:16px"></div>
-        <div class="card">
-            <h3>A simple card</h3>
-            <p>Style sections, add buttons, and ship.</p>
-        </div>
-    </div>
+    <div class="profile"></div>
+    <h1>Alex Creator</h1>
+    <p>Mobile Web Developer</p>
+    <a href="#" class="btn">View Work</a>
+    <button onclick="alert('Welcome to my portfolio!')" class="btn" style="margin-left: 10px; background: #3333ff; border-color: #3333ff;">Say Hello</button>
 </body>
 </html>`;
-    demoEditor.value = starter;
-    runDemo();
-});
-
-// Simple zip download (single file)
-function download(filename, content) {
-    const blob = new Blob([content], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+        if (demoEditor) {
+            demoEditor.value = starterCode;
+            // If we are on the preview tab, update it immediately
+            if (!viewPreview.classList.contains('hidden')) {
+                 updatePreview();
+            }
+        }
+    });
 }
 
-downloadZip.addEventListener('click', () => {
-    download('index.html', demoEditor.value);
+if (downloadZip) {
+    downloadZip.addEventListener('click', () => {
+        if (!demoEditor) return;
+        const blob = new Blob([demoEditor.value], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'index.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+}
+
+// Scroll Header Effect
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+    } else {
+        header.classList.remove('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/5');
+    }
 });
 
-// Add Intersection Observer for scroll animations
+// Copy Code Logic
+const copyCodeBtn = document.getElementById('copyCodeBtn');
+const offerCodeText = document.getElementById('offerCodeText');
+const copyBtnText = document.getElementById('copyBtnText');
+
+if (copyCodeBtn && offerCodeText) {
+    copyCodeBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(offerCodeText.textContent).then(() => {
+            copyBtnText.textContent = "Copied!";
+            setTimeout(() => copyBtnText.textContent = "Copy Code", 2000);
+        });
+    });
+}
+
+// Contact Form Logic (Mailto)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const subject = document.getElementById('subject').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        window.location.href = `mailto:chuyongglean@gmail.com?subject=${encodeURIComponent(subject)}&body=From: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+    });
+}
+
+// FAQ Accordion Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
+    faqItems.forEach(item => {
+        const questionButton = item.querySelector('.faq-question');
+        const answerDiv = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = entry.target.dataset.delay;
-                if (delay) {
-                    entry.target.style.animationDelay = delay;
-                }
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once animated
+        questionButton.addEventListener('click', () => {
+            const isOpen = item.classList.toggle('active');
+            icon.classList.toggle('rotate-180', isOpen);
+
+            if (isOpen) {
+                answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
+            } else {
+                answerDiv.style.maxHeight = '0';
             }
         });
-    }, observerOptions);
-
-    animateElements.forEach(element => {
-        observer.observe(element);
     });
-
-    // New JS for mobile menu functionality
-    const mainLogoLink = document.getElementById('mainLogoLink');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const closeMobileMenuButton = document.getElementById('closeMobileMenuButton');
-    const mobileMenuLinks = mobileMenuOverlay.querySelectorAll('[data-menu-link]'); // Get all links inside the mobile menu
-
-    // Media query to check for mobile screens (Tailwind's 'md' breakpoint is 768px and up)
-    const isMobile = window.matchMedia('(max-width: 767px)'); 
-
-    const toggleMobileMenu = (e) => {
-        // Only toggle if on mobile screen
-        if (isMobile.matches) {
-            // Prevent default scroll behavior only for the main logo link
-            // when it acts as a menu toggle, to avoid scrolling to top.
-            // Navigation links should perform their default scroll to anchor.
-            if (e.currentTarget.id === 'mainLogoLink') {
-                e.preventDefault(); 
-            }
-            mobileMenuOverlay.classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden'); // Prevent background scrolling
-        }
-    };
-
-    // Function to explicitly close the mobile menu
-    const closeMobileMenu = () => {
-        // Ensure it's on a mobile screen and the menu is currently open before closing
-        if (isMobile.matches && !mobileMenuOverlay.classList.contains('hidden')) {
-            mobileMenuOverlay.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-    };
-
-    // Event listener for main logo (burger icon) to toggle the menu
-    mainLogoLink.addEventListener('click', toggleMobileMenu);
-    
-    // Event listener for the close button inside the menu, which toggles it closed
-    closeMobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-    // Event listeners for navigation links inside the mobile menu
-    // Clicking these links should close the menu and allow default anchor navigation
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // No preventDefault() here; allow the browser to handle the anchor link navigation.f
-            closeMobileMenu(); // Explicitly close the menu after the navigation
-        });
-    });
-
-    // Close menu if screen resizes to desktop while menu is open
-    isMobile.addEventListener('change', (e) => {
-        if (!e.matches && !mobileMenuOverlay.classList.contains('hidden')) {
-            closeMobileMenu(); // Use the explicit close function to ensure it's hidden
-        }
-    });
-
-    // Contact form mailto functionality
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const subject = document.getElementById('subject').value;
-            const userEmail = document.getElementById('email').value; // User's email from the form
-            const message = document.getElementById('message').value;
-            
-            const recipientEmail = 'chuyongglean@gmail.com';
-
-            // Construct the body of the email, including the user's provided email
-            const emailBody = `From: ${userEmail}\n\n${message}`;
-
-            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-
-            window.location.href = mailtoLink;
-        });
-    }
-
-    // Offer code copy functionality
-    const copyCodeBtn = document.getElementById('copyCodeBtn');
-    if (copyCodeBtn) {
-        const offerCodeText = document.getElementById('offerCodeText');
-        const copyBtnText = document.getElementById('copyBtnText');
-
-        copyCodeBtn.addEventListener('click', () => {
-            if (!navigator.clipboard) {
-                alert('Clipboard API not available. Please copy manually.');
-                return;
-            }
-            navigator.clipboard.writeText(offerCodeText.textContent.trim()).then(() => {
-                copyBtnText.textContent = 'Copied!';
-                copyCodeBtn.classList.add('text-emerald-400', 'border-emerald-400/30');
-                
-                setTimeout(() => {
-                    copyBtnText.textContent = 'Copy Code';
-                    copyCodeBtn.classList.remove('text-emerald-400', 'border-emerald-400/30');
-                }, 2500);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy code. Please try again or copy manually.');
-            });
-        });
-    }
 });
