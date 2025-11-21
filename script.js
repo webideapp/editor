@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // On page load, check for saved theme in localStorage or default to light
+    // On page load, check for saved theme in localStorage.
+    // The HTML is set to light theme by default. This JS ensures the theme
+    // persists across sessions and the toggle icon is correct.
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 

@@ -11,6 +11,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Base styles are dark theme.
+   The .light class on the <html> tag overrides these for light mode.
+   Light mode is the default experience as the .light class is present in the HTML. */
 body {
   font-family: var(--font-body);
   background-color: #050505;
