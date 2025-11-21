@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // On page load, check for saved theme in localStorage or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // On page load, check for saved theme in localStorage or default to dark
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
     // Event listener for the toggle button
@@ -30,6 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
             
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
+        });
+    }
+
+    // Smooth scroll for offer link
+    const scrollToOfferLink = document.getElementById('scroll-to-offer');
+    if (scrollToOfferLink) {
+        scrollToOfferLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const offerSection = document.getElementById('offer-code');
+            if (offerSection) {
+                offerSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 });

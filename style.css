@@ -43,7 +43,7 @@ body {
 }
 
 @keyframes gradientX {
-    0%, 100% { background-position: 0% 50%; }
+    0%, 100% { background-position: 0% 50%; } 
     50% { background-position: 100% 50%; }
 }
 
@@ -80,6 +80,19 @@ body {
 
 .animate-pulse-slow {
     animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounceY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Move up 5px */
+  }
+}
+
+.animate-bounce-y {
+  animation: bounceY 1.5s infinite ease-in-out;
 }
 
 /* Improved Scroll Animation Class */
@@ -259,7 +272,7 @@ textarea:focus, input:focus {
 .light .border-white\/5 { border-color: var(--border-color) !important; }
 .light .border-white\/10 { border-color: var(--border-color) !important; }
 .light .bg-white\/5 { background-color: var(--card-bg) !important; }
-.light .bg-white\/[0\.01\] { background-color: var(--card-bg) !important; }
+.light .bg-white\[0\.01\] { background-color: var(--card-bg) !important; }
 .light .hover\:bg-white\/10:hover { background-color: var(--card-bg-hover) !important; }
 .light .bg-black\/20 { background-color: #f9fafb !important; }
 .light .bg-black\/40 { background-color: #fff !important; }
@@ -336,6 +349,12 @@ textarea:focus, input:focus {
 
 /* Offer Code */
 .light #offer-code .bg-\[\#0a0a0a\] { background-color: #f9fafb; }
+.light #offer-code h2 {
+    color: var(--text-primary) !important; /* Ensure it's not transparent in light mode */
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    background-image: initial !important;
+}
 .light #offerCodeText { background: linear-gradient(to right, #4f46e5, #0891b2); -webkit-background-clip: text; background-clip: text; }
 .light #copyCodeBtn { background-color: #111; color: #fff; }
 .light #copyCodeBtn:hover { background-color: #333; }
@@ -346,7 +365,10 @@ textarea:focus, input:focus {
 .light #contactForm input:focus, .light #contactForm textarea:focus { background-color: var(--card-bg-hover); border-color: var(--brand-500); }
 
 /* Footer */
-.light footer { background-color: #f9fafb; }
+.light footer {
+    background-color: #f3f4f6 !important;
+    border-top-color: #e5e7eb !important;
+}
 
 /* Theme Toggle Button */
 .light #theme-toggle { background-color: white; color: #1f2937; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid var(--border-color); }
