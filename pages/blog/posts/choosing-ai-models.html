@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choosing the Right AI Model — Web IDE Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#2dd4bf',
+                            DEFAULT: '#0d9488',
+                            dark: '#115e59',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/post.css">
+<link rel="stylesheet" href="../../../style.css"><link rel="stylesheet" href="../../docs/style.css"><link rel="stylesheet" href="../../privacy/style.css"><link rel="stylesheet" href="../../about/style.css"><link rel="stylesheet" href="../../contact/style.css"><link rel="stylesheet" href="../../terms/style.css"></head>
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="../../../index.html" class="flex items-center gap-3 group">
+                    <img src="../../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
+                    <span class="text-xl font-heading font-bold text-white">Web IDE</span>
+                </a>
+                <a href="../index.html" class="text-sm font-medium text-white/60 hover:text-white transition flex items-center gap-2">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Blog
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <article class="pt-40 pb-20 px-6">
+        <div class="container mx-auto max-w-3xl">
+            <!-- Meta -->
+            <div class="flex items-center gap-4 text-sm text-white/50 mb-8">
+                <span class="text-pink-400 font-bold uppercase tracking-wider">New Feature</span>
+                <span>•</span>
+                <span id="readTime">Reading...</span>
+                <span>•</span>
+                <span>Nov 02, 2023</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">Power &amp; Speed: Choosing the Right AI Model</h1>
+
+            <!-- Hero Image -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 mb-12 shadow-2xl">
+                <img src="../../../assets/images/Aiscreen.png" alt="AI Settings Screen" class="w-full">
+            </div>
+
+            <!-- Body -->
+            <div class="prose mx-auto">
+                <p>Web IDE integrates the latest Gemini models to power your development workflow. We understand that one size doesn't fit all—sometimes you need deep reasoning for complex architecture, and other times you just need a quick syntax fix. We've updated our settings to give you full control.</p>
+
+                <h2>Available AI Models</h2>
+                <p>You can now choose from a suite of models in the settings to match your specific needs:</p>
+                <ul>
+                    <li><strong>Gemini 3 Pro Preview</strong>: The cutting-edge model with advanced reasoning capabilities. Ideal for complex debugging, logic generation, and architectural advice.</li>
+                    <li><strong>Gemini 2.5 Pro</strong>: A robust powerhouse balancing high intelligence with stable performance.</li>
+                    <li><strong>Gemini 2.5 Flash &amp; Flash Preview</strong>: Optimized for speed and low latency. Great for quick code completions, explaining snippets, and rapid iteration.</li>
+                    <li><strong>Gemini 2.5 Flash Lite</strong>: The lightweight champion. Ultra-fast and efficient for smaller tasks where speed is the priority.</li>
+                </ul>
+
+                <h2>How to Switch Models</h2>
+                <p>Changing your AI engine is simple:</p>
+                <ol>
+                    <li>Go to <strong>Settings</strong> from the home screen sidebar or the gear icon.</li>
+                    <li>Scroll down to the <strong>AI</strong> section.</li>
+                    <li>Tap the <strong>AI Model</strong> dropdown to see the list of available engines.</li>
+                    <li>Select the model that best fits your current task.</li>
+                </ol>
+
+                <h2>Safety Nets: Auto AI Fallback</h2>
+                <p>We know reliability is key when you're in the flow. We've introduced an <strong>Auto AI Fallback</strong> toggle. When enabled, if your selected high-performance model (like Pro) is overloaded or experiencing downtime, the app automatically switches to <strong>Gemini 2.5 Flash Lite</strong>.</p>
+                <p>This ensures you always get a response, keeping your workflow uninterrupted even during peak usage times.</p>
+
+                <h2>Understanding Gemini Lite Capacity</h2>
+                <p>While models like <strong>Gemini Flash Lite</strong> are incredibly fast, they utilize a smaller context window to achieve that speed. As noted in the app:</p>
+                <blockquote>"Gemini Lite models changes may not take effect on heavy projects."</blockquote>
+                <p>If you have a large project with many files attached, the Lite model might not process all the context effectively. For heavy lifting, deep refactoring, or projects with extensive file structures, we recommend sticking to <strong>Gemini 3 Pro</strong> or <strong>Gemini 2.5 Pro</strong> to ensure the AI sees the full picture.</p>
+            </div>
+            
+            <!-- Actions -->
+            <div class="mt-12 pt-12 border-t border-white/10 flex justify-between items-center">
+                <div class="text-white/60">Share this article:</div>
+                <button id="shareBtn" onclick="copyLink()" class="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center gap-2 text-white">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <script src="../script.js"></script>
+    <script src="../actions/interactions.js"></script>
+
+<script src="../../../script.js"></script><script src="../../docs/script.js"></script><script src="../../about/script.js"></script><script src="../../contact/script.js"></script></body></html>

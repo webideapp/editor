@@ -1,0 +1,59 @@
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --brand-500: #0ea5e9;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #050505;
+  color: #f8fafc;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Light Mode Support */
+.light {
+    --bg-main: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
+    --card-bg: #f8fafc;
+}
+
+.light body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+}
+
+.light header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: var(--border-color);
+}
+
+.light .bg-white\/5 {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.light .bg-black\/20 {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    color: var(--text-primary);
+}
+
+.light .text-white\/60, .light .text-white\/70 {
+    color: var(--text-secondary);
+}
+
+.light .text-white {
+    color: var(--text-primary);
+}
+
+.light footer {
+    background-color: var(--card-bg);
+    border-top-color: var(--border-color);
+}
+          

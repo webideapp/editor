@@ -1,0 +1,584 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web IDE — Documentation</title>
+    <meta name="description" content="Complete documentation for Web IDE. Master the mobile code editor, AI tools, and project management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#2dd4bf',
+                            DEFAULT: '#0d9488',
+                            dark: '#115e59'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="pages/docs/style.css">
+    <link rel="stylesheet" href="pages/blog/style.css">
+    <link rel="stylesheet" href="pages/blog/styles/post.css">
+    <link rel="stylesheet" href="pages/privacy/style.css">
+    <link rel="stylesheet" href="pages/about/style.css">
+    <link rel="stylesheet" href="pages/contact/style.css">
+    <link rel="stylesheet" href="pages/terms/style.css">
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+        <div class="mx-auto w-full px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="../../index.html" class="flex items-center gap-3 group">
+                        <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10 shadow-sm transition transform group-hover:scale-105">
+                        <span class="font-heading font-bold text-lg text-white">Web IDE Docs<span class="text-white/40 font-normal"></span></span>
+                    </a>
+                </div>
+
+                <button id="menuToggle" class="md:hidden p-2 text-white/70 hover:text-white">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="../../index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Go to App</a>
+                    <a href="../blog/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Blog</a>
+                    <a href="https://apps.apple.com/us/app/web-ide/id6751813522" class="px-4 py-1.5 text-xs font-bold rounded-full bg-white text-black hover:bg-gray-200 transition">Download</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex min-h-screen pt-16">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 pt-16 w-72 bg-[#050505] border-r border-white/10 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-40 overflow-y-auto scrollbar-hide">
+            <nav class="p-6 space-y-8">
+                <div>
+                    <h3 class="text-xs font-bold text-white/40 uppercase tracking-wider mb-4">Start Here</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#introduction" class="block text-white/60 hover:text-white transition nav-link">Introduction</a></li>
+                        <li><a href="#installation" class="block text-white/60 hover:text-white transition nav-link">Installation</a></li>
+                        <li><a href="#interface" class="block text-white/60 hover:text-white transition nav-link">Interface Overview</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white/40 uppercase tracking-wider mb-4">Project Management</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#creating-projects" class="block text-white/60 hover:text-white transition nav-link">Creating Projects</a></li>
+                        <li><a href="#file-structure" class="block text-white/60 hover:text-white transition nav-link">File &amp; Folder Structure</a></li>
+                        <li><a href="#linking-files" class="block text-white/60 hover:text-white transition nav-link">Linking Files</a></li>
+                        <li><a href="#backup-sharing" class="block text-white/60 hover:text-white transition nav-link">Backup &amp; Sharing</a></li>
+                        <li><a href="#deployment" class="block text-white/60 hover:text-white transition nav-link">Deployment &amp; Hosting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white/40 uppercase tracking-wider mb-4">The Editor</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#code-editor" class="block text-white/60 hover:text-white transition nav-link">Writing Code</a></li>
+                        <li><a href="#ai-assistant" class="block text-white/60 hover:text-white transition nav-link">AI Assistant <span class="text-[10px] bg-brand-500/20 text-brand-400 px-1.5 py-0.5 rounded ml-1">Pro</span></a></li>
+                        <li><a href="#live-preview" class="block text-white/60 hover:text-white transition nav-link">Live Preview</a></li>
+                        <li><a href="#debugging" class="block text-white/60 hover:text-white transition nav-link">Console &amp; Debugging</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold text-white/40 uppercase tracking-wider mb-4">Languages</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#supported-languages" class="block text-white/60 hover:text-white transition nav-link">Supported Languages</a></li>
+                        <li><a href="#frontend-vs-backend" class="block text-white/60 hover:text-white transition nav-link">Frontend vs Backend</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 md:pl-72">
+            <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+                
+                <!-- Section: Intro -->
+                <article id="introduction" class="mb-24 scroll-mt-24">
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">Documentation</h1>
+                    <p class="text-lg text-white/70 leading-relaxed mb-6">
+                        Web IDE is a professional-grade mobile code editor designed to make web development accessible, fast, and powerful on touch devices. It combines a robust file system, a feature-rich code editor, and a real-time preview engine into a single app.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-6 rounded-2xl bg-brand-500/5 border border-brand-500/10">
+                            <h4 class="font-bold text-brand-300 mb-2">For Learners</h4>
+                            <p class="text-sm text-white/70">Start coding HTML/CSS instantly without setting up complex environments. Use the AI to explain code and fix errors.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-accent-DEFAULT/5 border border-accent-DEFAULT/10">
+                            <h4 class="font-bold text-accent-light mb-2">For Pros</h4>
+                            <p class="text-sm text-white/70">Prototype ideas on the go. Fix bugs from anywhere. Export clean, standard code to your desktop workflow.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="border-white/5 mb-24">
+
+                <!-- Section: Installation -->
+                <article id="installation" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Installation</h2>
+                    <p class="text-white/70 mb-8">Web IDE is available on iOS (App Store) and Android (via APK/stores). It is optimized for both smartphones and tablets.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://apps.apple.com/us/app/web-ide/id6751813522" target="_blank" class="flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-black hover:bg-gray-100 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.8-1.31.02-2.3-1.23-3.14-2.47-1.71-2.53-2.97-6.87-.09-9.66 1.36-1.34 3.21-1.61 4.3-1.59 1.27.02 2.16.87 2.86.87.67 0 2-.9 3.42-.85 1.14.05 2.23.47 3.04 1.22-2.69 1.68-2.22 5.76.52 6.97zM13 5c.66-1.04 1.18-2.43 1.07-3.86-1.16.09-2.74.84-3.6 1.84-.75.86-1.39 2.28-1.21 3.75 1.29.1 2.6-.65 3.74-1.73z"></path></svg>
+                            <span class="font-bold">App Store</span>
+                        </a>
+                        <a href="https://web-ide.en.uptodown.com/android/download" target="_blank" class="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#3DDC84] text-black hover:bg-[#35c476] transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0225 3.503c-1.6705-.765-3.5555-1.204-5.5984-1.204-2.0428 0-3.9279.439-5.5984 1.204l-2.0225-3.503a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.344 14.6589.344 18.7174h23.312c0-4.0585-2.3449-7.5307-6.8568-9.396z"></path></svg>
+                            <span class="font-bold">Android</span>
+                        </a>
+                    </div>
+                    <div class="mt-8 mb-3 rounded-lg border border-yellow-300 bg-yellow-50 p-5">
+  <div class="flex items-start gap-3">
+    <svg class="h-5 w-5 text-yellow-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.721-1.36 3.486 0l6.516 11.59c.75 1.334-.213 2.991-1.742 2.991H3.483c-1.53 0-2.492-1.657-1.743-2.99L8.257 3.1zM11 13a1 1 0 10-2 0 1 0 002 0zm-1-7a1 1 0 00-.993.883L9 7v4a1 1 0 001.993.117L11 11V7a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+    </svg>
+
+    <div>
+      <h3 class="font-semibold text-yellow-700 mb-1">
+        Note
+      </h3>
+      <p class="text-sm text-yellow-700 leading-relaxed">
+        The current Android version is outdated because the Android version of the app was discontinued.
+        We will take time to update it so it matches the latest iOS version.
+      </p>
+    </div>
+  </div>
+</div>
+                </article>
+
+                <!-- Section: Interface -->
+                <article id="interface" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Interface Overview</h2>
+                    <p class="text-white/70 mb-6">The Web IDE interface is divided into Four main areas designed to maximize screen real estate.</p>
+                    <img src="../../assets/images/homescreen.png" alt="Web IDE Home Screen" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 font-bold font-mono">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Home / Dashboard</h3>
+                                <p class="text-white/60">Your central hub. Here you see all your projects as cards. Tap a project to open it, or use the <strong>+</strong> button to create new ones.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center shrink-0 font-bold font-mono">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">The Editor</h3>
+                                <p class="text-white/60">When you open a file, you enter the Editor. It features line numbers, syntax highlighting, and a custom toolbar above your keyboard for common coding characters.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center shrink-0 font-bold font-mono">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">File Explorer</h3>
+                                <p class="text-white/60">Swipe from the left (or tap the menu icon) inside a project to reveal the file tree. This is where you create, rename, and organize your files.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center shrink-0 font-bold font-mono">4</div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Live Preview</h3>
+                                <p class="text-white/60">Click the play icon in the editor to preview your code. The live preview shows your website's frontend instantly, letting you see changes as you make them for rapid development and debugging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="border-white/5 mb-24">
+
+                <!-- Section: Creating Projects -->
+                <article id="creating-projects" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Creating Projects</h2>
+                    <p class="text-white/70 mb-6">Web IDE isolates code into "Projects". Each project is a self-contained environment on your device.</p>
+                    <img src="../../assets/images/creatinganewproject.png" alt="Creating a new project" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <ol class="list-decimal list-inside space-y-4 text-white/70">
+                        <li>Tap the <strong class="text-brand-400">+</strong> button on the Home screen.</li>
+                        <li>
+                            Choose a template from the library.
+                            <div class="mt-3 p-4 bg-white/5 rounded-lg border border-white/10 text-sm">
+                                <span class="text-brand-300 font-bold block mb-2">Available Templates:</span>
+                                <ul class="grid md:grid-cols-2 gap-2 list-none ml-0">
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> <strong>Empty</strong>: A clean slate to start fresh.</li>
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> <strong>Web App</strong>: Modern app structure.</li>
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-white/40"></span> <strong>Landing Page</strong>: Marketing ready.</li>
+                                </ul>
+                                <p class="mt-3 text-white/50 italic">Note: You will not see individual files (like <code>index.html</code>) in the selection screen. These fully compiled templates generate the necessary file structure automatically upon creation.</p>
+                            </div>
+                        </li>
+                        <li>Give your project a unique name.</li>
+                        <li>Tap <strong>Create Project</strong>.</li>
+                    </ol>
+                </article>
+
+                <!-- Section: File Structure -->
+                <article id="file-structure" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">File &amp; Folder Structure</h2>
+                    <p class="text-white/70 mb-6">Organization is key. Web IDE supports full folder nesting. To manage your files:</p>
+                    <img src="../../assets/images/fileexplorer.png" alt="File Explorer in Code Editor Screen" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <h4 class="font-bold text-white mb-4">Actions</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-400 font-mono">Create File</span>
+                                <span class="text-white/60">Tap the "New File" icon in the explorer. Be sure to add an extension (e.g., <code>.html</code>, <code>.css</code>).</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-400 font-mono">Create Folder</span>
+                                <span class="text-white/60">Tap the "New Folder" icon. You can then drag files into it or create files inside it.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand-400 font-mono">Rename/Delete</span>
+                                <span class="text-white/60">Long-press any file or folder to bring up the context menu.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                        <p class="text-sm text-yellow-200">
+                            <strong>Note:</strong> The root <code>index.html</code> is the main entry point for the Live Preview. Do not move it if you want the "Play" button to work instantly.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Section: Linking Files -->
+                <article id="linking-files" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Linking Your Files</h2>
+                    <p class="text-white/70 mb-6">
+                        To make your website work, you need to connect your HTML, CSS, and JavaScript files. This is done using specific tags within your HTML file.
+                    </p>
+                
+                    <h3 class="text-xl font-bold mb-3">Linking CSS</h3>
+                    <p class="text-white/70 mb-4">
+                        To apply your styles, add a <code>&lt;link&gt;</code> tag inside the <code>&lt;head&gt;</code> section of your HTML file. The <code>href</code> attribute should point to your CSS file.
+                    </p>
+                    <pre class="mb-8"><code class="language-html text-sm">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                
+                    <h3 class="text-xl font-bold mb-3">Linking JavaScript</h3>
+                    <p class="text-white/70 mb-4">
+                        To add interactivity, add a <code>&lt;script&gt;</code> tag just before the closing <code>&lt;/body&gt;</code> tag. The <code>src</code> attribute points to your JavaScript file. It's best practice to place scripts at the end of the body to ensure the HTML content loads first.
+                    </p>
+                    <pre class="mb-8"><code class="language-html text-sm">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  ...
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello!&lt;/h1&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3 class="text-xl font-bold mb-3">Linking Between Pages (Relative Paths)</h3>
+                    <p class="text-white/70 mb-4">
+                        When linking between different HTML pages, you must use relative paths. Use <code>../</code> to go up one directory level. This is crucial for navigating your site's structure.
+                    </p>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-sm">
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="font-mono text-brand-400">From: <code class="bg-transparent p-0">index.html</code> (at the project root)</p>
+                                <p class="font-mono text-white/70">To: <code class="bg-transparent p-0">pages/about/index.html</code></p>
+                                <pre class="mt-2 !p-3 !text-xs"><code class="language-html">&lt;a href="pages/about/index.html"&gt;About Us&lt;/a&gt;</code></pre>
+                            </li>
+                            <li>
+                                <p class="font-mono text-brand-400">From: <code class="bg-transparent p-0">pages/about/index.html</code></p>
+                                <p class="font-mono text-white/70">To: <code class="bg-transparent p-0">index.html</code> (at the project root)</p>
+                                <pre class="mt-2 !p-3 !text-xs"><code class="language-html">&lt;a href="../../index.html"&gt;Go Home&lt;/a&gt;</code></pre>
+                                <p class="text-white/50 italic text-xs mt-2">Note: The first <code>../</code> navigates up to the <code>pages</code> directory, and the second <code>../</code> navigates up to the root directory where <code>index.html</code> is located.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Section: Backup & Sharing -->
+                <article id="backup-sharing" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Backup &amp; Sharing</h2>
+                    <p class="text-white/70 mb-6">Web IDE uses a specialized <strong>.webide</strong> file format to keep your projects secure and portable.</p>
+                    
+                    <h3 class="text-xl font-bold mb-3">Creating a Backup</h3>
+                    <p class="text-white/70 mb-4">
+                        The app compiles your entire project—files, folders, and assets—into a single <code>.webide</code> file. When you export or back up a project, you select where to save this file on your device (e.g., Files app, iCloud, Google Drive).
+                    </p>
+
+                    <div class="my-8 p-6 bg-red-500/10 border border-red-500/20 rounded-xl">
+                        <h4 class="text-red-400 font-bold mb-2 flex items-center gap-2">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            Critical Warnings
+                        </h4>
+                        <ul class="list-disc list-inside space-y-2 text-white/70 text-sm">
+                            <li><strong>Do NOT Rename:</strong> Never try to rename the file extension or the file itself outside of the app. Doing so will corrupt the file.</li>
+                            <li><strong>Do NOT Edit Externally:</strong> Do not attempt to open the <code>.webide</code> file in a text editor or rewrite its content. Any external modification will corrupt the file structure.</li>
+                            <li><strong>Proprietary Format:</strong> This is a safe file container that <strong>only the Web IDE app</strong> can read.</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold mb-3">Collaboration Workflow</h3>
+                    <p class="text-white/70 mb-4">
+                        You can treat the <code>.webide</code> file like a repository (similar to GitHub). It is designed for sharing:
+                    </p>
+                    <ol class="list-decimal list-inside space-y-3 text-white/70 ml-2">
+                        <li><strong>Share:</strong> Send the <code>.webide</code> file to a colleague or friend.</li>
+                        <li><strong>Edit:</strong> They can open the file in their Web IDE app to work on the project.</li>
+                        <li><strong>Return:</strong> Once finished, they can back up the project again (compiling a new <code>.webide</code> file) and send it back to you.</li>
+                    </ol>
+                </article>
+                
+                <!-- Section: Deployment & Hosting -->
+                <article id="deployment" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Deployment &amp; Hosting</h2>
+                    <p class="text-white/70 mb-6">Ready to show the world? Here is how to take your project from Web IDE to the live web.</p>
+                    
+                    <h3 class="text-xl font-bold mb-3">1. Export Your Code</h3>
+                    <p class="text-white/70 mb-4">
+                        First, you need to get the raw files out of the app.
+                    </p>
+                    <ol class="list-decimal list-inside space-y-2 text-white/70 ml-2 mb-6">
+                        <li>Open your project in Web IDE.</li>
+                        <li>Tap the <strong>Export</strong> button in the project menu.</li>
+                        <li>Choose <strong>"Export as ZIP"</strong>. This bundles all your HTML, CSS, and images into a standard archive.</li>
+                        <li>Save the ZIP file to your device (Files app, Google Drive, etc.).</li>
+                    </ol>
+
+                    <h3 class="text-xl font-bold mb-3">2. Prepare Files</h3>
+                    <p class="text-white/70 mb-6">
+                        Locate the ZIP file you just saved and <strong>unzip</strong> (extract) it. You will now have a folder containing standard web files (<code>index.html</code>, <code>style.css</code>, etc.) that any web server can read.
+                    </p>
+
+                    <h3 class="text-xl font-bold mb-3">3. Choose a Host</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">GitHub Pages</h4>
+                            <p class="text-sm text-white/60">Free and popular. Create a repository, upload your unzipped files, and enable "GitHub Pages" in settings.</p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">Vercel / Netlify</h4>
+                            <p class="text-sm text-white/60">Easiest for drag-and-drop. Simply drag your unzipped project folder onto their dashboard to deploy instantly.</p>
+                        </div>
+                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                            <h4 class="font-bold text-white mb-2">WordPress</h4>
+                            <p class="text-sm text-white/60">Advanced. You can upload your HTML files to your hosting server via FTP, or convert your design into a WordPress theme.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section: Code Editor -->
+                <article id="code-editor" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Writing Code</h2>
+                    <p class="text-white/70 mb-6">The editor is built for speed. It includes:</p>
+                    <img src="../../assets/images/codeeditorscreen.png" alt="Web IDE Code Editor Screen" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <ul class="grid md:grid-cols-2 gap-4">
+                        <li class="bg-white/5 p-4 rounded-lg">
+                            <div class="font-bold text-white mb-1">Autocomplete</div>
+                            <div class="text-sm text-white/50">Intelligent suggestions for HTML tags, CSS properties, and JS methods.</div>
+                        </li>
+                        <li class="bg-white/5 p-4 rounded-lg">
+                            <div class="font-bold text-white mb-1">Auto-Close Tags</div>
+                            <div class="text-sm text-white/50">Type <code>&lt;div&gt;</code> and the editor automatically adds <code>&lt;/div&gt;</code>.</div>
+                        </li>
+                        <li class="bg-white/5 p-4 rounded-lg">
+                            <div class="font-bold text-white mb-1">Syntax Highlighting</div>
+                            <div class="text-sm text-white/50">Color-coded text for easier readability across all supported languages.</div>
+                        </li>
+                        <li class="bg-white/5 p-4 rounded-lg">
+                            <div class="font-bold text-white mb-1">Format Code</div>
+                            <div class="text-sm text-white/50">One-tap formatting to clean up indentation and spacing (Prettier-powered).</div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Section: AI Assistant -->
+                <article id="ai-assistant" class="mb-24 scroll-mt-24">
+                    <div class="flex items-center gap-3 mb-6">
+                        <h2 class="text-3xl font-heading font-bold">AI Assistant</h2>
+                        <span class="px-3 py-1 bg-gradient-to-r from-purple-500 to-brand-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">Pro Feature</span>
+                    </div>
+                    <p class="text-white/70 mb-6">Web IDE integrates a powerful Large Language Model (LLM) directly into the workspace.</p>
+                    <img src="../../assets/images/attachments.jpg" alt="AI Attachment Options" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                  
+                    <div class="border-l-4 border-brand-500 pl-6 py-2 mb-8">
+                        <h4 class="font-bold text-white">What can it do?</h4>
+                        <ul class="list-disc pl-4 mt-2 space-y-2 text-white/60">
+                            <li><strong>Generate Code</strong>: "Create a sticky navbar with a logo on the left."</li>
+                            <li><strong>Debug</strong>: "Why is my flexbox not centering the items?"</li>
+                            <li><strong>Refactor</strong>: "Rewrite this function to be more efficient."</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">How to use</h3>
+                    <ol class="list-decimal list-inside space-y-2 text-white/70">
+                        <li>Tap the <strong>AI Icon</strong> (Sparkles) in the bottom menu from the Home Screen.</li>
+                        <li>Attach a project to the chat, type your prompt in plain English, and send it.</li>
+                        <li>Review the code generated by the AI.</li>
+                        <li>Tap <strong>Insert</strong> to place the code at your cursor's current position.</li>
+                    </ol>
+                </article>
+
+                <!-- Section: Live Preview -->
+                <article id="live-preview" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Live Preview</h2>
+                    <p class="text-white/70 mb-6">See your changes instantly. The Live Preview runs a local web server on your device, simulating a real browser environment.</p>
+                    <img src="../../assets/images/livepreviewscreen.png" alt="Live Preview Screen" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center shrink-0">
+                                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Play Button</h4>
+                                <p class="text-sm text-white/60">Located at the top right. Tapping this splits the screen (on tablets) or opens a new view (on phones) rendering your <code>index.html</code>.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-8 h-8 rounded bg-white/10 flex items-center justify-center shrink-0">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Dark/Light Mode Testing</h4>
+                                <p class="text-sm text-white/60">The preview respects your system preferences, allowing you to test <code>@media (prefers-color-scheme)</code> CSS.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Section: Debugging -->
+                <article id="debugging" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Console &amp; Debugging</h2>
+                    <p class="text-white/70 mb-6">Developing on mobile doesn't mean flying blind. Web IDE captures browser logs.</p>
+                    <img src="../../assets/images/logconsoleinlivepreviewscreen.jpg" alt="Log Console in Live Preview Screen" class="w-full rounded-xl border border-white/10 my-8 shadow-xl">
+                    <div class="bg-[#0f172a] rounded-lg p-4 font-mono text-sm border border-white/10">
+                        <div class="text-green-400">&gt; console.log("Data loaded", data);</div>
+                        <div class="text-white/50 pl-4">{ id: 1, name: "Test" }</div>
+                        <div class="text-red-400 mt-2">&gt; Uncaught ReferenceError: x is not defined</div>
+                        <div class="text-white/30 pl-4">at script.js:14:2</div>
+                    </div>
+                    <p class="text-sm text-white/60 mt-4">To access the console, tap the <strong>Terminal Icon</strong> while in Live Preview mode.</p>
+                </article>
+
+                <hr class="border-white/5 mb-24">
+
+                <!-- Section: Languages -->
+                <article id="supported-languages" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Supported Languages</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-orange-400 mb-1">HTML5</div>
+                            <div class="text-xs text-white/40">Full Support</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-blue-400 mb-1">CSS3</div>
+                            <div class="text-xs text-white/40">Full Support</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-yellow-400 mb-1">JavaScript</div>
+                            <div class="text-xs text-white/40">ES6+ Support</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-blue-300 mb-1">TypeScript</div>
+                            <div class="text-xs text-white/40">Editor Only</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-purple-400 mb-1">PHP</div>
+                            <div class="text-xs text-white/40">Editor Only</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
+                            <div class="font-bold text-green-400 mb-1">Python</div>
+                            <div class="text-xs text-white/40">Editor Only</div>
+                        </div>
+                    </div>
+                    <p class="text-white/70 mt-8">
+                        Web IDE provides different levels of support. <strong class="text-brand-300">"Full Support"</strong> means the code can be edited and executed in the Live Preview. <strong class="text-accent-light">"Editor Only"</strong> means the app provides syntax highlighting and tools, but the code requires a separate server to run and cannot be previewed directly.
+                    </p>
+                    <div class="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+                        <h4 class="font-bold text-white mb-4">Supported File Extensions</h4>
+                        <ul class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3 text-sm text-white/60">
+                            <li><strong class="text-white/90">HTML:</strong> <code>.html</code></li>
+                            <li><strong class="text-white/90">CSS:</strong> <code>.css</code></li>
+                            <li><strong class="text-white/90">JavaScript:</strong> <code>.js</code></li>
+                            <li><strong class="text-white/90">TypeScript:</strong> <code>.ts</code>, <code>.tsx</code></li>
+                            <li><strong class="text-white/90">PHP:</strong> <code>.php</code></li>
+                            <li><strong class="text-white/90">Python:</strong> <code>.py</code></li>
+                            <li><strong class="text-white/90">SQL:</strong> <code>.sql</code></li>
+                            <li class="col-span-2 md:col-span-3"><strong class="text-white/90">Images:</strong> <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>.gif</code>, <code>.svg</code>, <code>.webp</code>, <code>.ico</code>, <code>.bmp</code></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article id="frontend-vs-backend" class="mb-24 scroll-mt-24">
+                    <h2 class="text-3xl font-heading font-bold mb-6">Frontend vs Backend</h2>
+                    <p class="text-white/70 mb-4">Web IDE is primarily a <strong>Client-Side</strong> development environment.</p>
+                    <ul class="list-disc list-inside space-y-3 text-white/70">
+                        <li><strong>HTML/CSS/JS</strong>: Runs natively in the Live Preview. You see exactly what you code.</li>
+                        <li><strong>PHP/Python/SQL</strong>: These are supported for <em>editing</em>. You can write the code with full syntax highlighting and autocomplete, but they require a server to run. The Live Preview cannot execute PHP or Python server-side logic directly.</li>
+                    </ul>
+                    <p class="mt-4 text-white/70">
+                        For full stack projects, we recommend using Web IDE to write your code, then exporting it to a server environment for deployment.
+                    </p>
+                </article>
+
+            </div>
+        </main>
+    </div>
+        <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
+        <div class="container mx-auto max-w-7xl px-6">
+            <div class="flex flex-col items-center text-center mb-12">
+                <a href="../../index.html" class="flex items-center gap-2 mb-4">
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
+                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
+                </a>
+                <p class="text-white/50 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
+                   <a href="../../index.html" class="hover:text-white transition">Home</a>
+                   <a href="../blog/index.html" class="hover:text-white transition">Blog</a>
+                   <a href="../about/index.html" class="hover:text-white transition">About</a>
+                   <a href="../contact/index.html" class="hover:text-white transition">Contact</a>
+                   <a href="../privacy/index.html" class="hover:text-white transition">Privacy</a>
+                   <a href="../terms/index.html" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
+                <div>© <span id="year"></span> Web IDE app.</div>
+                <div class="mt-4 md:mt-0">Created with ❤️ by Chuyong Glean.</div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- Overlay for mobile sidebar -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-30 hidden opacity-0 transition-opacity"></div>
+
+    <script src="script.js"></script>
+    <script src="pages/docs/script.js"></script>
+    <script src="pages/blog/script.js"></script>
+    <script src="pages/blog/actions/interactions.js"></script>
+    <script src="pages/about/script.js"></script>
+    <script src="pages/contact/script.js"></script>
+
+<script src="../../script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web IDE — Blog</title>
+    <meta name="description" content="Latest updates, tutorials, and insights from the Web IDE team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#2dd4bf', // Teal
+                            DEFAULT: '#0d9488',
+                            dark: '#115e59',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        } 
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Prevent flash of unstyled theme
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.classList.remove('light');
+            } else if (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // Auto-detect system preference if no save
+                document.documentElement.classList.remove('light');
+            }
+        })();
+    </script>
+<link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/blog/style.css"><link rel="stylesheet" href="pages/blog/styles/post.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/about/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="pages/terms/style.css"><link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="../../index.html" class="flex items-center gap-3 group relative z-50">
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-xl group-hover:scale-105 transition duration-300">
+                    <span class="text-xl font-heading font-bold tracking-tight text-white">Web IDE <span class="text-white/40 font-normal">Blog</span></span>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl">
+                    <a href="../../index.html" class="px-5 py-2 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-full transition">App</a>
+                    <a href="#" class="px-5 py-2 text-sm font-medium text-white bg-white/10 rounded-full transition">Blog</a>
+                    <a href="../docs/index.html" class="px-5 py-2 text-sm font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-full transition">Documentation</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden">
+        <div class="container mx-auto max-w-7xl px-6 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">
+                    Latest <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent-light">Updates</span>
+                </h1>
+                <p class="text-xl text-white/60 leading-relaxed">
+                    Tutorials, release notes, and pro tips for mobile developers.
+                </p>
+            </div>
+        </div>
+        <!-- Bg decor -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-900/10 blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="pb-20">
+        <div class="container mx-auto max-w-7xl px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 0: AI Models (New) -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/choosing-ai-models.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/Aiscreen.png" alt="AI Settings Screen" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-pink-400">
+                            <span>New Feature</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>4 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Power &amp; Speed: Choosing Your AI Model</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Explore the new Gemini models available in Web IDE, from the powerful Pro versions to the ultra-fast Flash Lite.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Card 1 -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/getting-started.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/creatinganewproject.png" alt="Creating a Project" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-brand-400">
+                            <span>Tutorial</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Getting Started with Web IDE</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Learn how to set up your workspace and create your first HTML project in seconds.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/master-editor.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/codeeditorscreen.png" alt="Code Editor" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-accent-light">
+                            <span>Feature Focus</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>3 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Mastering the Editor</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Discover the powerful features hidden in your mobile code editor, from AI to autocomplete.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/live-preview.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/livepreviewscreen.png" alt="Live Preview" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-purple-400">
+                            <span>Deep Dive</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>4 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">The Magic of Live Preview</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            How our instant preview engine helps you debug and design faster than ever before.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: New Post - AI Assistant Guide -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/ai-assistant-guide.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/attachments.jpg" alt="AI Attachment Options" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-green-400">
+                            <span>Feature Focus</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Unlocking Your Potential with Web IDE's AI Assistant</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Learn how to effectively use the intelligent AI assistant for code generation, debugging, and refactoring.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: New Post - Debugging Mastery -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/debugging-mastery.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/logconsoleinlivepreviewscreen.jpg" alt="Log Console in Live Preview Screen" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-orange-400">
+                            <span>Tutorial</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>6 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Debugging Like a Pro: Mastering the Console</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Dive deep into using the integrated console for efficient JavaScript debugging and error resolution.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6: New Post - Optimizing AI Usage -->
+                <article class="group relative flex flex-col bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-brand-500/30 transition duration-300">
+                    <a href="posts/optimizing-ai-usage.html" class="absolute inset-0 z-10"></a>
+                    <div class="aspect-video overflow-hidden">
+                        <img src="../../assets/images/ailimitcard.jpg" alt="AI Limit Card" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-blue-400">
+                            <span>Pro Tips</span>
+                            <span class="w-1 h-1 rounded-full bg-white/30"></span>
+                            <span>4 Min Read</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading mb-3 group-hover:text-brand-300 transition">Smart AI: Maximizing Your Assistant's Power</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6 flex-1">
+                            Discover best practices for crafting effective prompts and efficiently managing your AI requests.
+                        </p>
+                        <div class="flex items-center gap-3 pt-6 border-t border-white/5">
+                            <img src="../../assets/icon/webidecircularicon.png" alt="Web IDE Team" class="w-8 h-8 rounded-full">
+                            <span class="text-sm font-medium author-name">Web IDE Team</span>
+                        </div>
+                    </div>
+                </article>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Section: Daily Dev Wisdom -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-900/10 pointer-events-none"></div>
+        <div class="container mx-auto max-w-4xl px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-DEFAULT/10 border border-accent-DEFAULT/20 text-accent-light text-xs font-bold uppercase tracking-wider mb-6">
+                <span>Daily Inspiration</span>
+            </div>
+            
+            <div class="relative group">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-purple-500/20 blur-3xl opacity-50 group-hover:opacity-70 transition duration-700 rounded-3xl"></div>
+                <div class="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-2xl transition duration-500 hover:border-white/20">
+                    <svg class="w-12 h-12 text-white/10 absolute top-8 left-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                    
+                    <h3 class="text-2xl md:text-4xl font-heading font-bold mb-6 min-h-[120px] flex items-center justify-center transition-opacity duration-300" id="quoteText">
+                        "First, solve the problem. Then, write the code."
+                    </h3>
+                    
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="w-12 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <p class="text-brand-400 font-mono text-sm tracking-wide" id="quoteAuthor">- John Johnson</p>
+                    </div>
+
+                    <button id="newQuoteBtn" class="mt-10 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-500/50 hover:text-brand-300 transition-all duration-300 group/btn flex items-center gap-2 mx-auto text-sm font-medium">
+                        <svg class="w-4 h-4 transition-transform duration-500 group-hover/btn:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        Generate Wisdom
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
+        <div class="container mx-auto max-w-7xl px-6">
+            <div class="flex flex-col items-center text-center mb-12">
+                <a href="../../index.html" class="flex items-center gap-2 mb-4">
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
+                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
+                </a>
+                <p class="text-white/50 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
+                   <a href="../../index.html" class="hover:text-white transition">Home</a>
+                   <a href="../docs/index.html" class="hover:text-white transition">Docs</a>
+                   <a href="../about/index.html" class="hover:text-white transition">About</a>
+                   <a href="../contact/index.html" class="hover:text-white transition">Contact</a>
+                   <a href="../privacy/index.html" class="hover:text-white transition">Privacy</a>
+                   <a href="../terms/index.html" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
+                <div>© <span id="year"></span> Web IDE app.</div>
+                <div class="mt-4 md:mt-0">Created with ❤️ by Chuyong Glean.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script><script src="../../script.js"></script><script src="../docs/script.js"></script><script src="actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>

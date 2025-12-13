@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debugging Like a Pro: Mastering the Console — Web IDE Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                            400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                            800: '#075985', 900: '#0c4a6e',
+                        },
+                        accent: {
+                            light: '#2dd4bf',
+                            DEFAULT: '#0d9488',
+                            dark: '#115e59',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/post.css">
+<link rel="stylesheet" href="../../../style.css"><link rel="stylesheet" href="../../docs/style.css"><link rel="stylesheet" href="../../privacy/style.css"><link rel="stylesheet" href="../../about/style.css"><link rel="stylesheet" href="../../contact/style.css"><link rel="stylesheet" href="../../terms/style.css"></head>
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="../../../index.html" class="flex items-center gap-3 group">
+                    <img src="../../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
+                    <span class="text-xl font-heading font-bold text-white">Web IDE</span>
+                </a>
+                <a href="../index.html" class="text-sm font-medium text-white/60 hover:text-white transition flex items-center gap-2">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Blog
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <article class="pt-40 pb-20 px-6">
+        <div class="container mx-auto max-w-3xl">
+            <!-- Meta -->
+            <div class="flex items-center gap-4 text-sm text-white/50 mb-8">
+                <span class="text-accent-light font-bold uppercase tracking-wider">Tutorial</span>
+                <span>•</span>
+                <span id="readTime">Reading...</span>
+                <span>•</span>
+                <span>Oct 29, 2023</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">Debugging Like a Pro: Mastering the Console</h1>
+
+            <!-- Hero Image -->
+            <div class="rounded-2xl overflow-hidden border border-white/10 mb-12 shadow-2xl">
+                <img src="../../../assets/images/logconsoleinlivepreviewscreen.jpg" alt="Log Console in Live Preview" class="w-full">
+            </div>
+
+            <!-- Body -->
+            <div class="prose mx-auto">
+                <p>Effective debugging is a cornerstone of efficient web development. Web IDE's integrated console provides powerful tools to inspect your JavaScript, catch errors, and understand the flow of your application without leaving your mobile device.</p>
+
+                <h2>Accessing the Console</h2>
+                <p>While in Live Preview mode, simply tap the <strong>Terminal Icon</strong> to reveal the console panel. Here, you'll see all messages logged from your JavaScript code, as well as any runtime errors or warnings from the browser environment.</p>
+
+                <h3>Using <code>console.log()</code> and Friends</h3>
+                <p>Beyond basic <code>console.log()</code>, explore other methods for more structured debugging:</p>
+                <ul>
+                    <li><code>console.warn()</code>: For non-critical issues that should still be addressed.</li>
+                    <li><code>console.error()</code>: To highlight critical errors.</li>
+                    <li><code>console.info()</code>: For general informational messages.</li>
+                    <li><code>console.table()</code>: To display array or object data in a clear, tabular format.</li>
+                </ul>
+                <pre class="language-js"><code>// Example: Using console.table for structured data
+const users = [
+    { id: 1, name: 'Alice', email: 'alice@example.com' },
+    { id: 2, name: 'Bob', email: 'bob@example.com' }
+];
+console.table(users);
+</code></pre>
+
+                <h3>Understanding Error Messages</h3>
+                <p>The console not only shows errors but also provides stack traces, indicating exactly where an error occurred (file name, line number, and column). Learning to read these traces is crucial for quickly pinpointing the source of a bug. Don't be intimidated by red text – it's your guide to fixing issues!</p>
+            </div>
+            
+
+            <!-- Actions -->
+            <div class="mt-12 pt-12 border-t border-white/10 flex justify-between items-center">
+                <div class="text-white/60">Share this article:</div>
+                <button id="shareBtn" onclick="copyLink()" class="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center gap-2 text-white">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <script src="../script.js"></script>
+    <script src="../actions/interactions.js"></script>
+
+<script src="../../../script.js"></script><script src="../../docs/script.js"></script><script src="../../about/script.js"></script><script src="../../contact/script.js"></script></body></html>
