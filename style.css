@@ -9,11 +9,13 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-body);
   background-color: #050505;
+  overflow-x: hidden;
 }
 
 .bg-main {
@@ -169,6 +171,10 @@ body {
 textarea:focus, input:focus {
     outline: none;
     border-color: var(--brand-500);
+}
+
+button, a {
+    touch-action: manipulation;
 }
 
 .text-transparent {

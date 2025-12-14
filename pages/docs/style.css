@@ -71,6 +71,13 @@ article p {
     scroll-margin-top: 6rem;
 }
 
+/* Ensure sidebar is always visible on desktop */
+@media (min-width: 768px) { /* Tailwind's md breakpoint */
+    #sidebar {
+        transform: none !important; /* Override any translate-x issues */
+    }
+}
+
 /* Light Mode Support for Docs */
 .light {
     --bg-main: #ffffff;
@@ -141,4 +148,3 @@ article p {
 .light .bg-\[\#050505\] {
     background-color: #ffffff;
 }
-          

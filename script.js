@@ -213,8 +213,8 @@ if (insertStarter) {
 <html lang="en">
 <head>
 <style>
-  body { margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background: #111; font-family: sans-serif; }
-  .box { padding: 40px; background: linear-gradient(45deg, #ff0055, #0000ff); border-radius: 20px; color: white; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+  body { margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background: #f0f2f5; font-family: sans-serif; }
+  .box { padding: 40px; background: linear-gradient(45deg, #0ea5e9, #2dd4bf); border-radius: 20px; color: white; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
   h1 { font-size: 3em; margin: 0; }
   p { opacity: 0.8; }
 </style>
