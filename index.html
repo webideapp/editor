@@ -466,4 +466,56 @@
 
                                         <!-- Placeholder -->
                                         <div id="offerCodePlaceholder" class="flex flex-col items-center gap-2 transition-all duration-300">
-                                                <svg class="w-6 h-6 text-white/20 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg></div></div></div></div></div></div></div></section></section></main><script src="script.js"></script><script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script></body></html>
+                                                <svg class="w-6 h-6 text-white/20 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                                <span class="text-white/40 font-mono text-sm">[ CODE ENCRYPTED ]</span>
+                                                <span class="text-white/20 text-xs">Tap "Get Code" to decrypt</span>
+                                        </div>
+
+                                        <!-- Revealed Text (Hidden by default) -->
+                                        <div id="offerCodeText" class="absolute inset-0 flex items-center justify-center opacity-0 scale-90 blur-sm pointer-events-none transition-all duration-500">
+                                            <span class="text-3xl md:text-4xl font-mono font-bold offer-code-text tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-white to-accent-light">WEBIDE2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button id="offerCodeBtn" data-state="get" class="offer-copy-btn px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-brand-500/25 transition-all hover:-translate-y-1 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">
+                                    <span id="offerBtnText">Get Code</span>
+                                </button>
+                                
+                                <p class="text-xs text-white/30 mt-2">Limited time offer. Terms apply.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
+        <div class="container mx-auto max-w-7xl px-6">
+            <div class="flex flex-col items-center text-center mb-12">
+                <a href="#" class="flex items-center gap-2 mb-4">
+                    <img src="assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
+                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
+                </a>
+                <p class="text-white/50 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
+                    <a href="#" class="hover:text-white transition">Home</a>
+                    <a href="pages/blog/index.html" class="hover:text-white transition">Blog</a>
+                    <a href="pages/docs/index.html" class="hover:text-white transition">Docs</a>
+                    <a href="pages/about/index.html" class="hover:text-white transition">About</a>
+                    <a href="pages/contact/index.html" class="hover:text-white transition">Contact</a>
+                    <a href="pages/privacy/index.html" class="hover:text-white transition">Privacy</a>
+                    <a href="pages/terms/index.html" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
+                <div>© <span id="year"></span> Web IDE app.</div>
+                <div class="mt-4 md:mt-0">Created with ❤️ by Chuyong Glean.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script></body></html>
