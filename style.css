@@ -10,12 +10,15 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
   font-family: var(--font-body);
   background-color: #050505;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .bg-main {
@@ -24,6 +27,16 @@ body {
 
 .font-heading {
   font-family: var(--font-heading);
+}
+
+/* Navigation Item Styles */
+.nav-item {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #ffffff;
 }
 
 /* Animations */
@@ -220,6 +233,14 @@ button, a {
 .light .text-white\/40 { color: var(--text-muted) !important; }
 .light .text-white\/50, .light .text-white\/60, .light .text-white\/70 { color: var(--text-secondary) !important; }
 .light .text-white\/90 { color: var(--text-primary) !important; }
+
+/* Light Mode Nav Item Override */
+.light .nav-item {
+    color: var(--text-secondary);
+}
+.light .nav-item:hover {
+    color: var(--text-primary);
+}
 
 /* Borders & Backgrounds */
 .light .border-white\/5, .light .border-white\/10, .light .border-white\/20 { border-color: var(--border-color) !important; }
