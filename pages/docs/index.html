@@ -36,16 +36,9 @@
         }
     </script>
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="pages/docs/style.css">
-    <link rel="stylesheet" href="pages/blog/style.css">
-    <link rel="stylesheet" href="pages/blog/styles/post.css">
-    <link rel="stylesheet" href="pages/privacy/style.css">
-    <link rel="stylesheet" href="pages/about/style.css">
-    <link rel="stylesheet" href="pages/contact/style.css">
-    <link rel="stylesheet" href="pages/terms/style.css">
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+<link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/blog/style.css"><link rel="stylesheet" href="pages/blog/styles/post.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/about/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="pages/terms/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200">
 
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
@@ -145,7 +138,7 @@
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.8-1.31.02-2.3-1.23-3.14-2.47-1.71-2.53-2.97-6.87-.09-9.66 1.36-1.34 3.21-1.61 4.3-1.59 1.27.02 2.16.87 2.86.87.67 0 2-.9 3.42-.85 1.14.05 2.23.47 3.04 1.22-2.69 1.68-2.22 5.76.52 6.97zM13 5c.66-1.04 1.18-2.43 1.07-3.86-1.16.09-2.74.84-3.6 1.84-.75.86-1.39 2.28-1.21 3.75 1.29.1 2.6-.65 3.74-1.73z"></path></svg>
                             <span class="font-bold">App Store</span>
                         </a>
-                        <a href="https://web-ide.en.uptodown.com/android/download/1126136548" target="_blank" class="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#3DDC84] text-black hover:bg-[#35c476] transition">
+                        <a href="https://web-ide.en.uptodown.com/android/download" target="_blank" class="flex items-center gap-3 px-5 py-3 rounded-xl bg-[#3DDC84] text-black hover:bg-[#35c476] transition">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0225 3.503c-1.6705-.765-3.5555-1.204-5.5984-1.204-2.0428 0-3.9279.439-5.5984 1.204l-2.0225-3.503a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.344 14.6589.344 18.7174h23.312c0-4.0585-2.3449-7.5307-6.8568-9.396z"></path></svg>
                             <span class="font-bold">Android</span>
                         </a>
@@ -355,38 +348,85 @@
                 
                 <!-- Section: Deployment & Hosting -->
                 <article id="deployment" class="mb-24 scroll-mt-24">
-                    <h2 class="text-3xl font-heading font-bold mb-6">Deployment &amp; Hosting</h2>
-                    <p class="text-white/70 mb-6">Ready to show the world? Here is how to take your project from Web IDE to the live web.</p>
-                    
-                    <h3 class="text-xl font-bold mb-3">1. Export Your Code</h3>
-                    <p class="text-white/70 mb-4">
-                        First, you need to get the raw files out of the app.
-                    </p>
-                    <ol class="list-decimal list-inside space-y-2 text-white/70 ml-2 mb-6">
-                        <li>Open your project in Web IDE.</li>
-                        <li>Tap the <strong>Export</strong> button in the project menu.</li>
-                        <li>Choose <strong>"Export as ZIP"</strong>. This bundles all your HTML, CSS, and images into a standard archive.</li>
-                        <li>Save the ZIP file to your device (Files app, Google Drive, etc.).</li>
-                    </ol>
-
-                    <h3 class="text-xl font-bold mb-3">2. Prepare Files</h3>
-                    <p class="text-white/70 mb-6">
-                        Locate the ZIP file you just saved and <strong>unzip</strong> (extract) it. You will now have a folder containing standard web files (<code>index.html</code>, <code>style.css</code>, etc.) that any web server can read.
+                    <h2 class="text-3xl font-heading font-bold mb-6">Publishing Your Website</h2>
+                    <p class="text-white/70 mb-8">
+                        Since Web IDE runs locally on your device, you need to export your code and upload it to a hosting provider to make it accessible on the internet. Since Web IDE doesn't use a terminal, we will use <strong>manual upload methods</strong>.
                     </p>
 
-                    <h3 class="text-xl font-bold mb-3">3. Choose a Host</h3>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-                            <h4 class="font-bold text-white mb-2">GitHub Pages</h4>
-                            <p class="text-sm text-white/60">Free and popular. Create a repository, upload your unzipped files, and enable "GitHub Pages" in settings.</p>
+                    <!-- Step 1: Export -->
+                    <div class="bg-brand-500/5 border border-brand-500/10 rounded-2xl p-6 mb-12">
+                        <h3 class="text-2xl font-bold text-brand-300 mb-4">Step 1: Export Your Project</h3>
+                        <p class="text-white/70 mb-4">First, get your code out of the app.</p>
+                        <ol class="list-decimal list-inside space-y-3 text-white/70">
+                            <li>Open your project in Web IDE.</li>
+                            <li>Tap the <strong class="text-white bg-white/10 px-2 py-0.5 rounded text-sm">Three Dots (⋮)</strong> menu on the left side of the project toolbar.</li>
+                            <li>Select <strong class="text-white">Export</strong> from the menu.</li>
+                            <li>This generates a <strong>ZIP file</strong> containing all your HTML, CSS, JS, and assets.</li>
+                            <li>Save this ZIP file to your device's file manager (Files, Google Drive, etc.).</li>
+                            <li><strong>Important:</strong> Unzip (extract) this file. You will upload the <em>folder</em> or the <em>files inside it</em>, depending on the host.</li>
+                        </ol>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-6">Choose a Hosting Method</h3>
+
+                    <!-- Method: Netlify -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 rounded-lg bg-[#00C7B7]/20 text-[#00C7B7]">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l10 18H2L12 2zm0 3.7L4.7 18h14.6L12 5.7z"></path></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold">Method A: Netlify Drop (Easiest)</h4>
                         </div>
-                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-                            <h4 class="font-bold text-white mb-2">Vercel / Netlify</h4>
-                            <p class="text-sm text-white/60">Easiest for drag-and-drop. Simply drag your unzipped project folder onto their dashboard to deploy instantly.</p>
+                        <div class="pl-4 border-l-2 border-white/10 ml-3 space-y-4">
+                            <p class="text-white/70">Perfect for static sites (HTML/CSS/JS). No account required for simple tests.</p>
+                            <ol class="list-decimal list-inside space-y-2 text-white/70">
+                                <li>Go to <a href="https://app.netlify.com/drop" target="_blank" class="text-brand-400 hover:underline">Netlify Drop</a> in your browser.</li>
+                                <li>Drag and drop your <strong>unzipped project folder</strong> onto the target area.</li>
+                                <li>Wait for the upload to finish. Netlify will generate a live URL (e.g., <code>https://nifty-site-123.netlify.app</code>).</li>
+                            </ol>
                         </div>
-                        <div class="bg-white/5 p-5 rounded-xl border border-white/10">
-                            <h4 class="font-bold text-white mb-2">WordPress</h4>
-                            <p class="text-sm text-white/60">Advanced. You can upload your HTML files to your hosting server via FTP, or convert your design into a WordPress theme.</p>
+                    </div>
+
+                    <!-- Method: GitHub Pages -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 rounded-lg bg-white/10 text-white">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.05-.015-2.055-3.33.72-4.035-1.605-4.035-1.605-.54-1.38-1.335-1.755-1.335-1.755-1.085-.735.09-.72.09-.72 1.2.075 1.83 1.23 1.83 1.23 1.065 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.225 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.295-1.56 3.3-1.23 3.3-1.23.66 1.695.24 2.925.12 3.225.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold">Method B: GitHub Pages (Professional)</h4>
+                        </div>
+                        <div class="pl-4 border-l-2 border-white/10 ml-3 space-y-4">
+                            <p class="text-white/70">Best for version control and professional portfolios.</p>
+                            <ol class="list-decimal list-inside space-y-2 text-white/70">
+                                <li>Log in to <a href="https://github.com" target="_blank" class="text-brand-400 hover:underline">GitHub</a> and create a <strong>New Repository</strong>. Name it anything (e.g., <code>my-website</code>).</li>
+                                <li>On the repository setup page, look for the link saying <strong>"uploading an existing file"</strong>.</li>
+                                <li>Select all files from your <strong>unzipped folder</strong> (ensure <code>index.html</code> is at the root, not inside a subfolder).</li>
+                                <li>Wait for upload, then scroll down and click <strong>Commit changes</strong>.</li>
+                                <li>Go to the repository <strong>Settings</strong> tab.</li>
+                                <li>On the left sidebar, click <strong>Pages</strong>.</li>
+                                <li>Under "Build and deployment" &gt; "Branch", select <strong>main</strong> (or master) and click <strong>Save</strong>.</li>
+                                <li>GitHub will provide a URL (e.g., <code>username.github.io/my-website</code>) in a few minutes.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Method: Vercel -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 rounded-lg bg-white text-black">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 22.525H0l12-21.05 12 21.05z"></path></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold">Method C: Vercel (Best Performance)</h4>
+                        </div>
+                        <div class="pl-4 border-l-2 border-white/10 ml-3 space-y-4">
+                            <p class="text-white/70">Connects with GitHub for automatic updates.</p>
+                            <ol class="list-decimal list-inside space-y-2 text-white/70">
+                                <li>Follow the steps in <strong>Method B</strong> to upload your code to GitHub first.</li>
+                                <li>Go to <a href="https://vercel.com" target="_blank" class="text-brand-400 hover:underline">Vercel</a> and sign up using your GitHub account.</li>
+                                <li>On your dashboard, click <strong>"Add New..."</strong> &gt; <strong>"Project"</strong>.</li>
+                                <li>You will see your GitHub repository listed. Click <strong>Import</strong>.</li>
+                                <li>Click <strong>Deploy</strong>. Vercel will build your site instantly and provide a high-performance URL.</li>
+                            </ol>
                         </div>
                     </div>
                 </article>
@@ -504,7 +544,7 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <div class="font-bold text-blue-300 mb-1">TypeScript</div>
-                            <div class="text-xs text-white/40">Full Support</div>
+                            <div class="text-xs text-white/40">Editor Only</div>
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <div class="font-bold text-purple-400 mb-1">PHP</div>
@@ -538,7 +578,7 @@
                     <p class="text-white/70 mb-4">Web IDE is primarily a <strong>Client-Side</strong> development environment.</p>
                     <ul class="list-disc list-inside space-y-3 text-white/70">
                         <li><strong>HTML/CSS/JS</strong>: Runs natively in the Live Preview. You see exactly what you code.</li>
-                        <li><strong>PHP/Python/SQL</strong>: These are supported for <em>editing</em>. You can write the code with full syntax highlighting and autocomplete, but they require a server to run. The Live Preview cannot execute PHP or Python server-side logic directly.</li>
+                        <li><strong>PHP/Python/SQL</strong>: These are supported for <em>editing</em>. You can write the code with full syntax highlighting and tools, but they require a server to run. The Live Preview cannot execute PHP or Python server-side logic directly.</li>
                     </ul>
                     <p class="mt-4 text-white/70">
                         For full stack projects, we recommend using Web IDE to write your code, then exporting it to a server environment for deployment.
@@ -549,8 +589,8 @@
         </main>
     </div>
         <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
-        <div class="container mx-auto max-w-7xl px-6">
+    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8 md:pl-72 transition-all duration-300">
+        <div class="container mx-auto max-w-4xl px-6">
             <div class="flex flex-col items-center text-center mb-12">
                 <a href="../../index.html" class="flex items-center gap-2 mb-4">
                     <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
@@ -577,11 +617,6 @@
     <!-- Overlay for mobile sidebar -->
     <div id="sidebarOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-30 hidden opacity-0 transition-opacity"></div>
 
+    <script src="../../script.js"></script>
     <script src="script.js"></script>
-    <script src="pages/docs/script.js"></script>
-    <script src="pages/blog/script.js"></script>
-    <script src="pages/blog/actions/interactions.js"></script>
-    <script src="pages/about/script.js"></script>
-    <script src="pages/contact/script.js"></script>
-
-<script src="../../script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>
+<script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>
