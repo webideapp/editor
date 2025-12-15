@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme detection
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.documentElement.classList.add('light');
-    }
+    // Theme detection removed - Light Mode enforced
 
     // Footer Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
-          

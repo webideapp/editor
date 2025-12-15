@@ -2,12 +2,17 @@
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   --brand-500: #0ea5e9;
+  /* Light Mode Default */
+  --bg-main: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: #050505;
-  color: #f8fafc;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
 }
 
 .font-heading {
@@ -19,38 +24,25 @@ body {
     background-clip: text;
 }
 
-.light {
-    --bg-main: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: #e2e8f0;
-}
-
-.light body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-}
-
-.light header {
+header {
     background-color: rgba(255, 255, 255, 0.95);
     border-color: var(--border-color);
 }
 
-.light .bg-white\/5 {
-    background-color: #f8fafc;
-    border-color: #e2e8f0;
+.bg-white\/5 {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
 }
 
-.light footer {
+footer {
     background-color: #f8fafc;
     border-top-color: #e2e8f0;
 }
 
-.light .text-white {
-    color: var(--text-primary);
+.text-white {
+    color: var(--text-primary) !important;
 }
 
-.light .text-white\/60, .light .text-white\/50, .light .text-white\/70 {
-    color: var(--text-secondary);
+.text-white\/60, .text-white\/50, .text-white\/70 {
+    color: var(--text-secondary) !important;
 }
-          

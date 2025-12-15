@@ -25,59 +25,85 @@
     </script>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"><link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/blog/style.css"><link rel="stylesheet" href="pages/blog/styles/post.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/about/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="pages/terms/style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+<link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../contact/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
+<body class="font-body text-slate-900 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-700 overflow-x-hidden">
     
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-200 bg-white/90 backdrop-blur-md">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex items-center justify-between h-20">
-                <a href="../../index.html" class="flex items-center gap-3 group">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
-                    <span class="text-xl font-heading font-bold text-white">Web IDE</span>
+                <a href="../../index.html" class="flex items-center gap-3 group relative z-50">
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-gray-200 shadow-sm group-hover:scale-105 transition duration-300">
+                    <span class="text-xl font-heading font-bold text-slate-900">Web IDE</span>
                 </a>
-                <nav class="hidden md:flex items-center gap-6">
-                    <a href="../../index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Home</a>
-                    <a href="../blog/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Blog</a>
-                    <a href="../docs/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Docs</a>
-                    <a href="../contact/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Contact</a>
+                
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="../../index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Home</a>
+                    <a href="../blog/index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Blog</a>
+                    <a href="../docs/index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Docs</a>
+                    <a href="../contact/index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Contact</a>
                 </nav>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileMenuToggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition">
+                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
             </div>
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-white/98 z-[60] hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute top-6 right-6">
+            <button id="closeMobileMenuButton" class="p-2 rounded-full bg-gray-100 text-slate-900 hover:bg-gray-200 transition">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="h-full flex flex-col items-center justify-center gap-8 p-6">
+            <nav class="flex flex-col items-center gap-8 text-3xl font-heading font-bold text-slate-900">
+                <a href="../../index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Home</a>
+                <a href="../blog/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Blog</a>
+                <a href="../docs/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Docs</a>
+                <a href="../contact/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Contact</a>
+            </nav>
+        </div>
+    </div>
+
     <!-- Hero -->
     <section class="pt-40 pb-20 px-6">
         <div class="container mx-auto max-w-4xl text-center">
-            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-8">
+            <h1 class="text-5xl md:text-7xl font-heading font-bold mb-8 text-slate-900">
                 Building the future of <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-accent-light">mobile development.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600">mobile development.</span>
             </h1>
-            <p class="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
                 We believe that inspiration can strike anywhere. Our mission is to give developers professional-grade tools that fit in their pocket.
             </p>
         </div>
     </section>
 
     <!-- Stats -->
-    <section class="py-12 border-y border-white/5 bg-white/5">
+    <section class="py-12 border-y border-gray-200 bg-gray-50">
         <div class="container mx-auto max-w-7xl px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">1M+</div>
-                    <div class="text-sm text-white/50 uppercase tracking-wider">Downloads</div>
+                    <div class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">1M+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wider">Downloads</div>
                 </div>
                 <div>
-                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">4.8</div>
-                    <div class="text-sm text-white/50 uppercase tracking-wider">App Store Rating</div>
+                    <div class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">4.8</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wider">App Store Rating</div>
                 </div>
                 <div>
-                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">150+</div>
-                    <div class="text-sm text-white/50 uppercase tracking-wider">Countries</div>
+                    <div class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">150+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wider">Countries</div>
                 </div>
                 <div>
-                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
-                    <div class="text-sm text-white/50 uppercase tracking-wider">Support</div>
+                    <div class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">24/7</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wider">Support</div>
                 </div>
             </div>
         </div>
@@ -86,8 +112,8 @@
     <!-- Story -->
     <section class="py-20 px-6">
         <div class="container mx-auto max-w-3xl">
-            <h2 class="text-3xl font-heading font-bold mb-6">Our Story</h2>
-            <div class="prose prose-lg prose-invert text-white/70">
+            <h2 class="text-3xl font-heading font-bold mb-6 text-slate-900">Our Story</h2>
+            <div class="prose prose-lg text-slate-600">
                 <p class="mb-6">It started with a simple frustration: trying to fix a bug on a client's website while on a train. The available mobile editors were clunky, lacked syntax highlighting, and felt like toys.</p>
                 <p class="mb-6">We built Web IDE to change that. By combining a powerful local runtime environment with a touch-optimized interface, we've created an editor that doesn't just "work" on mobile—it thrives there.</p>
                 <p>Today, Web IDE is used by students, hobbyists, and professional engineers at top tech companies to prototype, debug, and ship code from anywhere in the world.</p>
@@ -96,24 +122,24 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
+    <footer class="border-t border-gray-200 bg-gray-50 pt-16 pb-8">
         <div class="container mx-auto max-w-7xl px-6">
             <div class="flex flex-col items-center text-center mb-12">
                 <a href="../../index.html" class="flex items-center gap-2 mb-4">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
-                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-gray-200">
+                    <span class="text-2xl font-heading font-bold text-slate-900">Web IDE</span>
                 </a>
-                <p class="text-white/50 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
-                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
-                    <a href="../../index.html" class="hover:text-white transition">Home</a>
-                    <a href="../blog/index.html" class="hover:text-white transition">Blog</a>
-                    <a href="../docs/index.html" class="hover:text-white transition">Documentation</a>
-                    <a href="../contact/index.html" class="hover:text-white transition">Contact</a>
-                    <a href="../privacy/index.html" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="../terms/index.html" class="hover:text-white transition">Terms of Service</a>
+                <p class="text-slate-500 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-slate-600">
+                    <a href="../../index.html" class="hover:text-brand-600 transition">Home</a>
+                    <a href="../blog/index.html" class="hover:text-brand-600 transition">Blog</a>
+                    <a href="../docs/index.html" class="hover:text-brand-600 transition">Docs</a>
+                    <a href="../contact/index.html" class="hover:text-brand-600 transition">Contact</a>
+                    <a href="../privacy/index.html" class="hover:text-brand-600 transition">Privacy</a>
+                    <a href="../terms/index.html" class="hover:text-brand-600 transition">Terms</a>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200 text-sm text-slate-400">
                 <div>© <span id="year"></span> Web IDE app.</div>
                 <div class="mt-4 md:mt-0">
                     Created with ❤️ by Chuyong Glean.
@@ -122,6 +148,6 @@
         </div>
     </footer>
     
+    <script src="../../script.js"></script>
     <script src="script.js"></script>
-
-<script src="../../script.js"></script><script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../contact/script.js"></script><script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script></body></html>
+<script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../contact/script.js"></script></body></html>

@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme detection
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.documentElement.classList.add('light');
-    }
+    // Theme detection removed - Light Mode enforced
 
     // Footer Year
     const yearEl = document.getElementById('year');
@@ -25,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Quote Generator Logic (Creative Section)
+    // Quote Generator Logic
     const quotes = [
         { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
         { text: "Experience is the name everyone gives to their mistakes.", author: "Oscar Wilde" },
@@ -61,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Animate in
                 quoteText.style.opacity = '1';
                 quoteAuthor.style.opacity = '1';
-            }, 300); // Duration matches CSS transition
+            }, 300);
         });
     }
 });

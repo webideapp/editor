@@ -1,12 +1,12 @@
 .prose {
-    color: #cbd5e1;
+    color: #475569;
     max-width: 65ch;
     font-size: 1.125rem;
     line-height: 1.8;
 }
 
 .prose h2 {
-    color: #f8fafc;
+    color: #0f172a;
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 2rem;
@@ -16,7 +16,7 @@
 }
 
 .prose h3 {
-    color: #f8fafc;
+    color: #0f172a;
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1.5rem;
@@ -39,7 +39,7 @@
 }
 
 .prose strong {
-    color: #38bdf8;
+    color: #0284c7;
     font-weight: 600;
 }
 
@@ -47,23 +47,5 @@
     border-radius: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
 }
-
-/* Light Mode for Prose */
-.light .prose {
-    color: #475569;
-}
-
-.light .prose h2, .light .prose h3 {
-    color: #0f172a;
-}
-
-.light .prose strong {
-    color: #0284c7;
-}
-
-.light .prose img {
-    border-color: rgba(0,0,0,0.1);
-}
-          

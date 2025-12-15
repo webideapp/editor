@@ -2,44 +2,48 @@
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   --brand-500: #0ea5e9;
+  /* Light Mode Defaults */
+  --bg-main: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: #050505;
-  color: #f8fafc;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
 }
 
 .font-heading {
   font-family: var(--font-heading);
 }
 
-.light {
-    --bg-main: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: #e2e8f0;
-}
-
-.light body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-}
-
-.light header {
+header {
     background-color: rgba(255, 255, 255, 0.95);
     border-color: var(--border-color);
 }
 
-.light .prose h3, .light .prose p, .light .prose li {
+.prose h3, .prose p, .prose li {
     color: var(--text-primary);
 }
-.light .prose p, .light .prose li {
+.prose p, .prose li {
     color: var(--text-secondary);
 }
 
-.light footer {
+footer {
     background-color: #f8fafc;
     border-top-color: var(--border-color);
 }
-          
+
+.text-white {
+    color: var(--text-primary) !important;
+}
+
+.text-white\/40 {
+    color: #94a3b8 !important;
+}
+
+.text-white\/60, .text-white\/70 {
+    color: var(--text-secondary) !important;
+}

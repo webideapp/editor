@@ -1,33 +1,5 @@
-// Theme Switcher Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const htmlRoot = document.documentElement;
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
-    c
-    const applyTheme = (theme) => {
-        if (theme === 'light') {
-            htmlRoot.classList.add('light');
-            if (darkIcon) darkIcon.classList.add('hidden');
-            if (lightIcon) lightIcon.classList.remove('hidden');
-        } else {
-            htmlRoot.classList.remove('light');
-            if (darkIcon) darkIcon.classList.remove('hidden');
-            if (lightIcon) lightIcon.classList.add('hidden');
-        }
-    };
-
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
-
-    if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', () => {
-            const isLight = htmlRoot.classList.contains('light');
-            const newTheme = isLight ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-            applyTheme(newTheme);
-        });
-    }
+    // Theme Logic Removed - Enforced Light Mode
 
     // Smooth scroll for offer link
     const scrollToOfferLink = document.getElementById('scroll-to-offer');
@@ -43,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Footer Year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Mobile Menu Logic
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -155,7 +128,6 @@ if (typeWriterElement) {
 // Phone Mockup Rotation
 const phoneMockup = document.getElementById('phoneMockup');
 if (phoneMockup) {
-    // The initial state is -6deg from Tailwind class.
     let currentAngle = -6; 
 
     phoneMockup.addEventListener('click', () => {
