@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const htmlRoot = document.documentElement;
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');
-
+    c
     const applyTheme = (theme) => {
         if (theme === 'light') {
             htmlRoot.classList.add('light');
