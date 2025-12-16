@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
 
 <meta name="google-site-verification" content="b8fkxe3FxUrP0aD5JGbJgzOWOylZGlx976ES1DSL8w8">
     <meta name="google-site-verification" content="wqLZENnKJKS23vpg0J_4sRI5TxQy8aqTvYaZ60BcvxE">
@@ -6,7 +6,7 @@
     <!-- Event snippet for Page view conversion page -->
     <script>
         gtag('event', 'conversion', {
-            'send_to': 'AW-17601191424/7WEwCKza8qEbEIC888hB',
+            'send_to': 'AW-17601191424/7WEwCKza8EbEIC888hB',
             'value': 1.0,
             'currency': 'USD'
         });
@@ -83,12 +83,15 @@
     <script>
         // Prevent flash of unstyled theme
         (function() {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'dark') {
-                document.documentElement.classList.remove('light');
-            } else if (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                // Auto-detect system preference if no save
-                document.documentElement.classList.remove('light');
+            const savedTheme = localStorage.getItem('theme');
+            let initialTheme;
+            if (savedTheme) {
+                initialTheme = savedTheme;
+            } else {
+                initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            if (initialTheme === 'light') {
+                document.documentElement.classList.add('light');
             }
         })();
     </script>
@@ -128,12 +131,6 @@
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle" type="button" class="text-white/70 hover:text-white transition p-2 rounded-full focus:outline-none" aria-label="Toggle theme">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
-                    </button>
-
                     <a target="_blank" rel="noopener" href="http://bit.ly/downloadwebide" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white shadow-[0_0_20px_-5px_rgba(14,165,233,0.5)] transition-all hover:-translate-y-0.5 border border-white/10">
                         <span>Get App</span>
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -287,8 +284,8 @@
                                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                         <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                                         <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                        <line x1="6" y="6" x2="6.01" y2="6"></line>
-                                        <line x1="6" y="18" x2="6.01" y2="18"></line>
+                                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
                                     </svg>
                                 </div>
                                 <h3 class="text-xl font-bold font-heading mb-3 text-white">True Local Server</h3>
@@ -474,7 +471,7 @@
                                         <div id="offerCodePlaceholder" class="flex flex-col items-center gap-2 transition-all duration-300">
                                                 <svg class="w-6 h-6 text-white/20 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                                 <span class="text-white/40 font-mono text-sm">[ CODE ENCRYPTED ]</span>
-                                                <span class="text-white/20 text-xs">Tap "Get Code" to decrypt</span>
+                                                <span class="text-white/20 text-xs">Tap \"Get Code\" to decrypt</span>
                                         </div>
 
                                         <!-- Revealed Text (Hidden by default) -->
@@ -496,6 +493,20 @@
             </section>
         </section>
     </main>
+
+    <!-- Theme Switch FAB -->
+    <div class="fixed bottom-6 right-6 z-[100]">
+        <button id="theme-toggle" type="button" class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-500/50">
+            <!-- Moon Icon (Dark Mode) -->
+            <svg id="theme-toggle-dark-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun Icon (Light Mode) -->
+            <svg id="theme-toggle-light-icon" class="hidden w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
@@ -524,4 +535,5 @@
     </footer>
 
     <script src="script.js"></script>
-<script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script></body></html>
+<script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script>
+</body></html>

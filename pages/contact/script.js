@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme detection removed
+    // Theme
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+        document.documentElement.classList.add('light');
+    }
 
     // Year
     const yearEl = document.getElementById('year');
@@ -19,3 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+          

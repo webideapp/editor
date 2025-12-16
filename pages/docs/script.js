@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme detection removed
+    // Theme detection
+    const theme = localStorage.getItem('theme');
+    if (theme === 'light') {
+        document.documentElement.classList.add('light');
+    }
 
     // Sidebar Mobile Toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -67,3 +71,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 });
+          

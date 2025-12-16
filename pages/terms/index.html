@@ -25,78 +25,61 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"></head>
-<body class="font-body text-slate-900 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-700 overflow-x-hidden">
+<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-200 bg-white/90 backdrop-blur-md">
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex items-center justify-between h-16">
                 <a href="../../index.html" class="flex items-center gap-3 group">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-gray-200 shadow-sm">
-                    <span class="font-heading font-bold text-lg text-slate-900">Web IDE <span class="text-slate-400 font-normal">Terms</span></span>
+                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10 shadow-sm">
+                    <span class="font-heading font-bold text-lg text-white">Web IDE <span class="text-white/40 font-normal">Terms</span></span>
                 </a>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                     <a href="../../index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Home</a>
-                     <a href="../contact/index.html" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Contact</a>
+                <nav class="hidden md:flex items-center gap-6">
+                     <a href="../../index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Home</a>
+                     <a href="../contact/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Contact</a>
                 </nav>
-
-                <!-- Mobile Toggle -->
-                <button id="mobileMenuToggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition">
-                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenuOverlay" class="fixed inset-0 bg-white/98 z-[60] hidden opacity-0 transition-opacity duration-300">
-        <div class="absolute top-6 right-6">
-            <button id="closeMobileMenuButton" class="p-2 rounded-full bg-gray-100 text-slate-900 hover:bg-gray-200 transition">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <div class="h-full flex flex-col items-center justify-center gap-8 p-6">
-            <nav class="flex flex-col items-center gap-8 text-3xl font-heading font-bold text-slate-900">
-                <a href="../../index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Home</a>
-                <a href="../contact/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Contact</a>
-            </nav>
-        </div>
-    </div>
-
     <!-- Content -->
     <section class="pt-32 pb-20 px-6">
         <div class="container mx-auto max-w-3xl">
-            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-10 text-slate-900">Terms of Service</h1>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-10">Terms of Service</h1>
             
-            <div class="prose prose-lg text-slate-600 max-w-none">
+            <div class="prose prose-lg prose-invert max-w-none text-white/70">
                 <p>Last updated: October 27, 2023</p>
                 <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Web IDE mobile application (the "Service") operated by Web IDE ("us", "we", or "our").</p>
 
-                <h3 class="text-slate-900 font-bold text-xl mt-8 mb-4">1. Conditions of Use</h3>
+                <h3 class="text-white font-bold text-xl mt-8 mb-4">1. Conditions of Use</h3>
                 <p>By accessing this Service, you certify that you have read and review this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to leave the website accordingly.</p>
 
-                <h3 class="text-slate-900 font-bold text-xl mt-8 mb-4">2. Intellectual Property</h3>
+                <h3 class="text-white font-bold text-xl mt-8 mb-4">2. Intellectual Property</h3>
                 <p>You agree that all materials, products, and services provided on this website are the property of Web IDE, its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property.</p>
 
-                <h3 class="text-slate-900 font-bold text-xl mt-8 mb-4">3. User Obligations</h3>
+                <h3 class="text-white font-bold text-xl mt-8 mb-4">3. User Obligations</h3>
                 <p>As a user of this website, you may be asked to register with us and provide private information. You are responsible for ensuring the accuracy of this information, and you are responsible for maintaining the safety and security of your identifying information.</p>
 
-                <h3 class="text-slate-900 font-bold text-xl mt-8 mb-4">4. Applicable Law</h3>
+                <h3 class="text-white font-bold text-xl mt-8 mb-4">4. Applicable Law</h3>
                 <p>By visiting this website, you agree that the laws of the location of our headquarters, without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between Web IDE and you.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-200 bg-gray-50 pt-12 pb-8">
+    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-12 pb-8">
         <div class="container mx-auto max-w-7xl px-6 flex flex-col items-center">
-             <div class="text-sm text-slate-500">© <span id="year"></span> Web IDE app. All rights reserved.</div>
+             <div class="text-sm text-white/40">© <span id="year"></span> Web IDE app. All rights reserved.</div>
         </div>
     </footer>
 
-    <script src="../../script.js"></script>
-<script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') document.documentElement.classList.add('light');
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+<script src="../../script.js"></script><script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>
