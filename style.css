@@ -1,4 +1,4 @@
-:root {
+            :root {
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   --brand-500: #0ea5e9;
@@ -351,4 +351,22 @@ button, a {
 
 .light .version-badge-text {
     background-image: linear-gradient(90deg, #0284c7, #0ea5e9, #7c3aed, #0284c7);
+}
+
+/* Offer Code section specific overrides for Light Mode */
+.light #offer-code .offer-code-box .text-white\/40 { /* For '[ CODE ENCRYPTED ]' */
+    color: var(--text-primary) !important; /* Make it dark for contrast */
+}
+.light #offer-code .offer-code-box .text-white\/20 { /* For SVG and 'Tap "Get Code" to decrypt' */
+    color: var(--text-secondary) !important; /* Make it noticeable but lighter than primary */
+}
+
+/* Decrypting state text color (text-brand-400) */
+.light #offer-code .offer-code-box .text-brand-400 {
+    color: hsl(220, 90%, 56%) !important; /* Use primary brand color from premium UI specs */
+}
+
+/* Copied state text color (text-green-400) */
+.light #offer-code .offer-code-box .text-green-400 {
+    color: hsl(142, 71%, 45%) !important; /* Use success HSL color from premium UI specs */
 }
