@@ -18,6 +18,19 @@ body {
     font-family: var(--font-heading);
 }
 
+/* Image accessibility & contrast */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Caption or text under images ensure visibility */
+article img + p,
+article img + ul {
+    margin-top: 1.5rem;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
     width: 6px;
@@ -72,19 +85,24 @@ article p {
 }
 
 /* Ensure sidebar is always visible on desktop */
-@media (min-width: 768px) { /* Tailwind's md breakpoint */
+@media (min-width: 768px) {
     #sidebar {
-        transform: none !important; /* Override any translate-x issues */
+        transform: none !important;
     }
 }
 
-/* Light Mode Support for Docs */
+/* Description text styling for high contrast in both modes */
+.text-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Light Mode Support for Docs - Improved Contrast */
 .light {
     --bg-main: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --border-color: #e2e8f0;
-    --sidebar-bg: #f8fafc;
+    --text-primary: #111827; /* Darker for better contrast */
+    --text-secondary: #374151;
+    --border-color: #e5e7eb;
+    --sidebar-bg: #f9fafb;
 }
 
 .light body {
@@ -103,48 +121,67 @@ article p {
 }
 
 .light h1, .light h2, .light h3, .light h4, .light h5 {
-    color: #1e293b;
+    color: #111827;
 }
 
+/* Explicit color overrides for better readability in light mode */
 .light p, .light li {
-    color: #475569;
+    color: #374151 !important;
 }
 
-.light .bg-white\/5 {
-    background-color: #f1f5f9;
-    border-color: #cbd5e1;
+.light .text-white\/70, 
+.light .text-white\/60, 
+.light .text-white\/50 {
+    color: #374151 !important;
+}
+
+/* Target the specific description class for high contrast in light mode */
+.light .text-description {
+    color: #1f2937 !important; /* Dark slate gray for maximum readability */
 }
 
 .light .text-white\/40 {
-    color: #94a3b8;
+    color: #6b7280 !important;
 }
 
-.light .text-white\/50 {
-    color: #64748b;
-}
-
-.light .text-white\/60, .light .text-white\/70 {
-    color: #475569;
+.light .bg-white\/5 {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
 }
 
 .light .text-white {
-    color: #0f172a;
+    color: #111827 !important;
 }
 
 .light code {
-    background: #e2e8f0;
-    color: #0f172a;
+    background: #f3f4f6;
+    color: #111827;
+    border: 1px solid #e5e7eb;
 }
 
 .light .border-white\/10, .light .border-white\/5 {
-    border-color: #e2e8f0;
+    border-color: #e5e7eb;
 }
 
 .light .bg-\[\#0f172a\] {
-    background-color: #f1f5f9;
-    border-color: #e2e8f0;
+    background-color: #f9fafb;
+    border-color: #e5e7eb;
 }
 
 .light .bg-\[\#050505\] {
     background-color: #ffffff;
+}
+
+/* Fix specifically for text color in nested structures like "Actions" or templates */
+.light .text-brand-400 {
+    color: #0284c7 !important; /* Slightly darker for accessibility on white */
+}
+
+.light .text-accent-light {
+    color: #0d9488 !important;
+}
+
+.light .bg-brand-500\/5 {
+    background-color: #f0f9ff !important;
+    border-color: #bae6fd !important;
 }
