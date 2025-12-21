@@ -80,32 +80,17 @@
         }
     </script>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Prevent flash of unstyled theme
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            let initialTheme;
-            if (savedTheme) {
-                initialTheme = savedTheme;
-            } else {
-                initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-            if (initialTheme === 'light') {
-                document.documentElement.classList.add('light');
-            }
-        })();
-    </script>
 <link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/blog/style.css"><link rel="stylesheet" href="pages/blog/styles/post.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/about/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="pages/terms/style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+<body class="font-body text-slate-900 bg-white antialiased selection:bg-brand-500/30 selection:text-brand-900 overflow-x-hidden">
     
     <!-- Dynamic Background -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
          <!-- Noise -->
         <div class="absolute inset-0 opacity-[0.04] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%221%22/%3E%3C/svg%3E');"></div>
         <!-- Blobs -->
-        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-72 h-72 bg-accent-light rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
     </div>
 
     <!-- Header -->
@@ -115,10 +100,10 @@
                 <div class="flex items-center gap-12">
                     <a href="#" id="mainLogoLink" class="flex items-center gap-3 group relative z-50">
                         <div class="relative">
-                            <div class="absolute inset-0 bg-brand-500 blur-lg opacity-40 group-hover:opacity-60 transition duration-500"></div>
-                            <img src="assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="relative w-10 h-10 rounded-xl border border-white/10 shadow-xl group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-brand-500 blur-lg opacity-20 group-hover:opacity-40 transition duration-500"></div>
+                            <img src="assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="relative w-10 h-10 rounded-xl border border-slate-200 shadow-sm group-hover:scale-105 transition duration-300">
                         </div>
-                        <span class="text-xl font-heading font-bold tracking-tight text-white">Web IDE</span>
+                        <span class="text-xl font-heading font-bold tracking-tight text-slate-900">Web IDE</span>
                     </a>
                     
                     <!-- Desktop Navigation -->
@@ -131,12 +116,12 @@
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <a target="_blank" rel="noopener" href="http://bit.ly/downloadwebide" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white shadow-[0_0_20px_-5px_rgba(14,165,233,0.5)] transition-all hover:-translate-y-0.5 border border-white/10">
+                    <a target="_blank" rel="noopener" href="http://bit.ly/downloadwebide" class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white shadow-lg transition-all hover:-translate-y-0.5 border border-white/10">
                         <span>Get App</span>
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </a>
                     <!-- Mobile Toggle -->
-                    <button id="mobileMenuToggle" class="md:hidden p-2 text-white/70 hover:text-white transition">
+                    <button id="mobileMenuToggle" class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition">
                          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                     </button>
                 </div>
@@ -145,9 +130,9 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] hidden opacity-0 transition-opacity duration-300">
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[60] hidden opacity-0 transition-opacity duration-300">
         <div class="absolute top-6 right-6">
-            <button id="closeMobileMenuButton" class="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition">
+            <button id="closeMobileMenuButton" class="p-2 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -155,18 +140,18 @@
             </button>
         </div>
         <div class="h-full flex flex-col items-center justify-center gap-8 p-6">
-            <nav class="flex flex-col items-center gap-8 text-3xl font-heading font-bold text-white/90">
-                <a href="pages/blog/index.html" class="hover:text-brand-400 transition transform hover:scale-110" data-menu-link="">Blog</a>
-                <a href="pages/docs/index.html" class="hover:text-brand-400 transition transform hover:scale-110" data-menu-link="">Docs</a>
-                <a href="pages/about/index.html" class="hover:text-brand-400 transition transform hover:scale-110" data-menu-link="">About</a>
-                <a href="pages/contact/index.html" class="hover:text-brand-400 transition transform hover:scale-110" data-menu-link="">Contact</a>
+            <nav class="flex flex-col items-center gap-8 text-3xl font-heading font-bold text-slate-900/90">
+                <a href="pages/blog/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Blog</a>
+                <a href="pages/docs/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Docs</a>
+                <a href="pages/about/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">About</a>
+                <a href="pages/contact/index.html" class="hover:text-brand-500 transition transform hover:scale-110" data-menu-link="">Contact</a>
             </nav>
             <div class="flex flex-col w-full max-w-xs gap-4 mt-8">
-                <a href="https://apps.apple.com/us/app/web-ide/id6751813522" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-white text-black font-bold text-lg hover:scale-105 transition shadow-xl">
+                <a href="https://apps.apple.com/us/app/web-ide/id6751813522" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-slate-900 text-white font-bold text-lg hover:scale-105 transition shadow-xl">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.8-1.31.02-2.3-1.23-3.14-2.47-1.71-2.53-2.97-6.87-.09-9.66 1.36-1.34 3.21-1.61 4.3-1.59 1.27.02 2.16.87 2.86.87.67 0 2-.9 3.42-.85 1.14.05 2.23.47 3.04 1.22-2.69 1.68-2.22 5.76.52 6.97zM13 5c.66-1.04 1.18-2.43 1.07-3.86-1.16.09-2.74.84-3.6 1.84-.75.86-1.39 2.28-1.21 3.75 1.29.1 2.6-.65 3.74-1.73z"></path></svg>
                     App Store
                 </a>
-                <a href="https://web-ide.en.uptodown.com/android/download" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-white/10 border border-white/20 font-bold text-lg hover:bg-white/20 transition backdrop-blur-md">
+                <a href="https://web-ide.en.uptodown.com/android/download" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-slate-100 border border-slate-200 font-bold text-lg hover:bg-slate-200 transition backdrop-blur-md text-slate-900">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9996.4482.9996.9993s-.4486.9997-.9996.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0225 3.503c-1.6705-.765-3.5555-1.204-5.5984-1.204-2.0428 0-3.9279.439-5.5984 1.204l-2.0225-3.503a.416.416 0 00-.5676-.1521.416.416 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.344 14.6589.344 18.7174h23.312c0-4.0585-2.3449-7.5307-6.8568-9.396z"></path></svg>
                     Android
                 </a>
@@ -182,7 +167,7 @@
             <div class="container mx-auto max-w-7xl px-6 relative z-10">
                 <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                     <div class="hero-text">
-                        <div class="version-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium uppercase tracking-wider mb-8 shadow-lg backdrop-blur-sm">
+                        <div class="version-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 border border-brand-300 text-xs font-medium uppercase tracking-wider mb-8 shadow-sm backdrop-blur-sm">
                             <span class="relative flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
@@ -191,71 +176,71 @@
                         </div>
                         <h1 class="text-4xl sm:text-5xl md:text-7xl font-heading font-bold leading-tight tracking-tight mb-6 animate-fade-up opacity-0" style="animation-delay: 0.2s">
                             Code on mobile <br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-accent-light to-purple-400 animate-gradient-x">without limits.</span>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-teal-500 animate-gradient-x">without limits.</span>
                         </h1>
-                        <p class="text-lg md:text-xl text-white/60 mb-8 md:mb-10 max-w-lg leading-relaxed animate-fade-up opacity-0" style="animation-delay: 0.3s">
+                        <p class="text-lg md:text-xl text-slate-600 mb-8 md:mb-10 max-w-lg leading-relaxed animate-fade-up opacity-0" style="animation-delay: 0.3s">
                             The most powerful mobile web editor. Prompt, code, live preview, and Ship Easily.
                         </p>
                         <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 animate-fade-up opacity-0" style="animation-delay: 0.4s">
-                            <a href="pages/docs/index.html" class="group relative px-6 py-4 h-[60px] bg-white text-black rounded-2xl font-bold text-lg transition hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                            <a href="pages/docs/index.html" class="group relative px-6 py-4 h-[60px] bg-slate-900 text-white rounded-2xl font-bold text-lg transition hover:scale-[1.02] hover:shadow-xl overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
                                 <span class="flex items-center gap-2 whitespace-nowrap">
                                     Install Now
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x="5" y="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                 </span>
                             </a>
-                            <a href="pages/blog/index.html" class="group relative px-6 py-4 h-[60px] bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg transition hover:bg-white/20 backdrop-blur-md overflow-hidden">
+                            <a href="pages/blog/index.html" class="group relative px-6 py-4 h-[60px] bg-slate-100 text-slate-900 border border-slate-200 rounded-2xl font-bold text-lg transition hover:bg-slate-200 backdrop-blur-md overflow-hidden">
                                 <span class="flex items-center gap-2 whitespace-nowrap">
                                     Visit Blog
                                 </span>
                             </a>
                         </div>
                         <!-- Floating Text for Offer Code -->
-                        <a href="#offer-code" id="scroll-to-offer" class="block text-center sm:text-left w-full mt-10 text-sm font-medium cursor-pointer text-white/40 hover:text-white transition animate-fade-up opacity-0" style="animation-delay: 0.5s">
+                        <a href="#offer-code" id="scroll-to-offer" class="block text-center sm:text-left w-full mt-10 text-sm font-medium cursor-pointer text-slate-400 hover:text-slate-600 transition animate-fade-up opacity-0" style="animation-delay: 0.5s">
                             <span class="inline-block animate-bounce-y">Scroll to the bottom for Web IDE offer code ↓</span>
                         </a>
                     </div>
 
                     <!-- Phone Mockup -->
                     <div class="relative animate-fade-up opacity-0 flex justify-center" style="animation-delay: 0.5s">
-                        <div id="phoneMockup" class="relative w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] aspect-[9/19] bg-[#0a0a0a] rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-[8px] border-[#222] shadow-2xl overflow-hidden transform rotate-[-6deg] transition-transform duration-700 ease-out z-10 cursor-pointer">
+                        <div id="phoneMockup" class="relative w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] aspect-[9/19] bg-white rounded-[2.5rem] md:rounded-[3rem] border-[6px] md:border-[8px] border-slate-200 shadow-2xl overflow-hidden transform rotate-[-6deg] transition-transform duration-700 ease-out z-10 cursor-pointer">
                                 <!-- Notch -->
-                            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 md:h-7 w-28 md:w-32 bg-[#222] rounded-b-xl z-20"></div>
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 md:h-7 w-28 md:w-32 bg-slate-200 rounded-b-xl z-20"></div>
                             
                             <!-- Screen Content -->
-                            <div class="h-full w-full bg-[#0f172a] flex flex-col font-mono">
+                            <div class="h-full w-full bg-slate-50 flex flex-col font-mono">
                                 <!-- Header -->
-                                <div class="pt-8 md:pt-10 pb-3 px-4 flex items-center justify-between bg-[#1e293b] border-b border-white/5">
+                                <div class="pt-8 md:pt-10 pb-3 px-4 flex items-center justify-between bg-white border-b border-slate-200">
                                     <div class="flex gap-2">
-                                        <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                                        <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                        <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                                        <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
                                     </div>
-                                    <div class="text-[10px] text-white/40 uppercase tracking-widest">index.html</div>
+                                    <div class="text-[10px] text-slate-400 uppercase tracking-widest">index.html</div>
                                 </div>
                                 <!-- Code Area -->
-                                <div class="flex-1 p-4 text-xs leading-relaxed overflow-hidden relative group bg-[#0b1120]">
-                                    <div class="absolute left-4 top-4 bottom-4 w-[1px] bg-white/5"></div>
-                                    <div class="pl-4 text-blue-300/90" id="heroTypewriter">
+                                <div class="flex-1 p-4 text-xs leading-relaxed overflow-hidden relative group bg-white">
+                                    <div class="absolute left-4 top-4 bottom-4 w-[1px] bg-slate-100"></div>
+                                    <div class="pl-4 text-slate-700" id="heroTypewriter">
                                         <!-- Typewriter content injected via JS -->
                                     </div>
                                 </div>
                                 <!-- Mini Preview Bar -->
-                                <div class="h-12 md:h-14 bg-[#1e293b] border-t border-white/5 flex items-center justify-around text-white/50">
-                                    <div class="flex flex-col items-center gap-1 hover:text-brand-400 transition cursor-pointer">
+                                <div class="h-12 md:h-14 bg-white border-t border-slate-100 flex items-center justify-around text-slate-400">
+                                    <div class="flex flex-col items-center gap-1 hover:text-brand-500 transition cursor-pointer">
                                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                                     </div>
-                                    <div class="flex flex-col items-center gap-1 text-brand-400 cursor-pointer">
+                                    <div class="flex flex-col items-center gap-1 text-brand-500 cursor-pointer">
                                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                                     </div>
-                                    <div class="flex flex-col items-center gap-1 hover:text-brand-400 transition cursor-pointer">
+                                    <div class="flex flex-col items-center gap-1 hover:text-brand-500 transition cursor-pointer">
                                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Glow behind phone -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/40 to-accent-light/30 blur-3xl -z-10 rounded-full transform scale-110"></div>
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-teal-100 blur-3xl -z-10 rounded-full transform scale-110 opacity-50"></div>
                     </div>
                 </div>
             </div>
@@ -265,20 +250,20 @@
                 <div class="container mx-auto max-w-7xl px-6">
                     <!-- Section Header -->
                     <div class="text-center max-w-3xl mx-auto mb-20 scroll-fade-in" data-scroll-delay="0">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-bold uppercase tracking-wider mb-8 hover:bg-brand-500/20 transition-colors cursor-default">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-600 text-xs font-bold uppercase tracking-wider mb-8 hover:bg-brand-100 transition-colors cursor-default">
                             What sets us apart
                         </div>
-                        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+                        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 text-slate-900">
                             More Than a Text Editor
                         </h2>
-                        <p class="text-lg text-white/60 leading-relaxed">
+                        <p class="text-lg text-slate-600 leading-relaxed">
                             We've built a true development environment that understands your projects, streamlines your workflow, and brings desktop-class power to your fingertips.
                         </p>
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Card 1: Local Server -->
-                        <div class="spotlight-card relative p-8 rounded-3xl bg-white/5 border border-white/10 overflow-hidden scroll-fade-in" data-scroll-delay="100">
+                        <div class="spotlight-card relative p-8 rounded-3xl bg-slate-50 border border-slate-200 overflow-hidden scroll-fade-in" data-scroll-delay="100">
                             <div class="relative z-10">
                                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-500 mb-6 flex items-center justify-center text-white">
                                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -288,15 +273,15 @@
                                         <line x1="6" y1="18" x2="6.01" y2="18"></line>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold font-heading mb-3 text-white">True Local Server</h3>
-                                <p class="text-white/60 text-sm leading-relaxed">
+                                <h3 class="text-xl font-bold font-heading mb-3 text-slate-900">True Local Server</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
                                     Test with confidence. Our editor runs a genuine local server, ensuring relative paths for images, scripts, and assets work flawlessly.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 2: Context-Aware AI -->
-                        <div class="spotlight-card relative p-8 rounded-3xl bg-white/5 border border-white/10 overflow-hidden scroll-fade-in" data-scroll-delay="200">
+                        <div class="spotlight-card relative p-8 rounded-3xl bg-slate-50 border border-slate-200 overflow-hidden scroll-fade-in" data-scroll-delay="200">
                             <div class="relative z-10">
                                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-purple-500 mb-6 flex items-center justify-center text-white">
                                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
@@ -311,17 +296,17 @@
                                         <path d="m8 8 1.5 1.5"></path>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold font-heading mb-3 text-white">Context-Aware AI</h3>
-                                <p class="text-white/60 text-sm leading-relaxed">
+                                <h3 class="text-xl font-bold font-heading mb-3 text-slate-900">Context-Aware AI</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
                                     Our AI understands your entire project, providing accurate assistance for debugging, refactoring, and code generation.
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card 3: Secure & Portable -->
-                        <div class="spotlight-card relative p-8 rounded-3xl bg-white/5 border border-white/10 overflow-hidden scroll-fade-in" data-scroll-delay="300">
+                        <div class="spotlight-card relative p-8 rounded-3xl bg-slate-50 border border-slate-200 overflow-hidden scroll-fade-in" data-scroll-delay="300">
                             <div class="relative z-10">
-                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-default to-accent-light mb-6 flex items-center justify-center text-white">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-600 to-teal-500 mb-6 flex items-center justify-center text-white">
                                     <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                         <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
                                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -329,8 +314,8 @@
                                         <line x1="12" y1="22.08" x2="12" y2="12"></line>
                                     </svg>
                                 </div>
-                                <h3 class="text-xl font-bold font-heading mb-3 text-white">Secure &amp; Portable</h3>
-                                <p class="text-white/60 text-sm leading-relaxed">
+                                <h3 class="text-xl font-bold font-heading mb-3 text-slate-900">Secure &amp; Portable</h3>
+                                <p class="text-slate-600 text-sm leading-relaxed">
                                     Package your entire project into a single `.webide` file for secure backups, versioning, and seamless collaboration.
                                 </p>
                             </div>
@@ -340,40 +325,40 @@
             </section>
 
             <!-- Interactive Demo Section -->
-            <section id="demo" class="py-20 relative bg-black/20">
+            <section id="demo" class="py-20 relative bg-slate-50">
                 <div class="container mx-auto max-w-7xl px-6">
                         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 scroll-fade-in" data-scroll-delay="0">
                         <div>
-                            <h2 class="text-3xl md:text-4xl font-heading font-bold">Try it yourself</h2>
-                            <p class="text-white/60 mt-2">Experience the editor engine directly in your browser.</p>
+                            <h2 class="text-3xl md:text-4xl font-heading font-bold text-slate-900">Try it yourself</h2>
+                            <p class="text-slate-600 mt-2">Experience the editor engine directly in your browser.</p>
                         </div>
                         <div class="flex gap-2">
-                            <button id="insertStarter" class="px-4 py-2 text-sm rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition hover:border-white/20">Load Template</button>
-                            <button id="downloadZip" class="px-4 py-2 text-sm rounded-lg bg-brand-600 text-white hover:bg-brand-500 transition shadow-lg shadow-brand-900/20">Download HTML</button>
+                            <button id="insertStarter" class="px-4 py-2 text-sm rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition">Load Template</button>
+                            <button id="downloadZip" class="px-4 py-2 text-sm rounded-lg bg-brand-600 text-white hover:bg-brand-500 transition shadow-lg">Download HTML</button>
                         </div>
                     </div>
 
                     <!-- Editor Window -->
-                    <div class="rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#0f172a] flex flex-col h-[500px] md:h-[600px] scroll-fade-in" data-scroll-delay="100">
+                    <div class="rounded-xl overflow-hidden border border-slate-200 shadow-2xl bg-white flex flex-col h-[500px] md:h-[600px] scroll-fade-in" data-scroll-delay="100">
                         <!-- Toolbar -->
-                        <div class="bg-[#1e293b] px-4 py-3 border-b border-white/5 flex items-center justify-between shrink-0">
+                        <div class="bg-slate-100 px-4 py-3 border-b border-slate-200 flex items-center justify-between shrink-0">
                             <div class="flex items-center gap-2">
                                 <div class="flex gap-1.5">
-                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
                                 </div>
                             </div>
-                            <div class="flex bg-black/30 rounded-lg p-1 gap-1">
-                                <button id="tabEditor" class="px-4 py-1.5 text-xs font-medium text-white bg-white/10 rounded shadow-sm transition-all">Editor</button>
-                                <button id="tabPreview" class="px-4 py-1.5 text-xs font-medium text-white/50 hover:text-white transition-all">Run Preview</button>
+                            <div class="flex bg-slate-200 rounded-lg p-1 gap-1">
+                                <button id="tabEditor" class="px-4 py-1.5 text-xs font-medium text-slate-900 bg-white rounded shadow-sm transition-all">Editor</button>
+                                <button id="tabPreview" class="px-4 py-1.5 text-xs font-medium text-slate-500 hover:text-slate-900 transition-all">Run Preview</button>
                             </div>
                         </div>
 
                         <!-- Content -->
                         <div class="flex-1 relative w-full overflow-hidden">
-                            <div id="viewEditor" class="absolute inset-0 flex flex-col bg-[#0b1120] z-10">
-                                <textarea id="demoEditor" class="flex-1 w-full bg-[#0b1120] p-6 text-base md:text-sm font-mono leading-relaxed text-gray-300 focus:outline-none resize-none selection:bg-brand-500/30" spellcheck="false">&lt;!doctype html&gt;
+                            <div id="viewEditor" class="absolute inset-0 flex flex-col bg-white z-10">
+                                <textarea id="demoEditor" class="flex-1 w-full bg-white p-6 text-base md:text-sm font-mono leading-relaxed text-slate-700 focus:outline-none resize-none selection:bg-brand-500/30" spellcheck="false">&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;style&gt;
@@ -441,51 +426,51 @@
             <!-- Offer Code -->
             <section id="offer-code" class="py-20 px-6">
                 <div class="mx-auto max-w-4xl scroll-fade-in" data-scroll-delay="0">
-                    <div class="relative rounded-[2rem] offer-card-bg border border-white/10 p-1 overflow-hidden group">
+                    <div class="relative rounded-[2rem] offer-card-bg border border-slate-200 p-1 overflow-hidden group">
                         <!-- Decorative Gradients -->
-                        <div class="absolute -top-20 -left-20 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl group-hover:bg-brand-500/30 transition duration-700"></div>
-                        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-accent-light/20 rounded-full blur-3xl group-hover:bg-accent-light/30 transition duration-700"></div>
+                        <div class="absolute -top-20 -left-20 w-64 h-64 bg-brand-200 rounded-full blur-3xl group-hover:bg-brand-300 transition duration-700 opacity-40"></div>
+                        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-teal-200 rounded-full blur-3xl group-hover:bg-teal-300 transition duration-700 opacity-40"></div>
                         
-                        <div class="relative offer-card-inner backdrop-blur-xl rounded-[1.8rem] p-10 md:p-16 text-center">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-6 font-heading">Unlock Pro Features</h2>
-                            <p class="text-white/60 mb-10 text-lg max-w-xl mx-auto">Use this special code to unlock premium capabilities and increase your AI request limits for free.</p>
+                        <div class="relative offer-card-inner backdrop-blur-xl rounded-[1.8rem] p-10 md:p-16 text-center bg-white/60">
+                            <h2 class="text-3xl md:text-5xl font-bold mb-6 font-heading text-slate-900">Unlock Pro Features</h2>
+                            <p class="text-slate-600 mb-10 text-lg max-w-xl mx-auto">Use this special code to unlock premium capabilities and increase your AI request limits for free.</p>
                             
                             <div class="flex flex-col items-center justify-center gap-6">
                                 <div class="relative w-full max-w-lg group/code cursor-pointer">
                                     <!-- Glow effect -->
-                                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-accent-light blur-xl opacity-20 group-hover/code:opacity-40 transition duration-500"></div>
+                                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-teal-500 blur-xl opacity-10 group-hover/code:opacity-20 transition duration-500"></div>
                                     
                                     <!-- The Box -->
-                                    <div class="relative px-8 py-6 offer-code-box border border-white/10 rounded-2xl flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 group-hover/code:border-white/20" style="min-height: 140px;">
+                                    <div class="relative px-8 py-6 offer-code-box border border-slate-200 rounded-2xl flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 group-hover/code:border-slate-300 bg-white shadow-inner" style="min-height: 140px;">
                                         
                                         <!-- Tech Decoration Corners -->
-                                        <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/10 rounded-tl-lg group-hover/code:border-brand-500/50 transition-colors"></div>
-                                        <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/10 rounded-tr-lg group-hover/code:border-brand-500/50 transition-colors"></div>
-                                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/10 rounded-bl-lg group-hover/code:border-brand-500/50 transition-colors"></div>
-                                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/10 rounded-br-lg group-hover/code:border-brand-500/50 transition-colors"></div>
+                                        <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-slate-200 rounded-tl-lg group-hover/code:border-brand-500/50 transition-colors"></div>
+                                        <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-slate-200 rounded-tr-lg group-hover/code:border-brand-500/50 transition-colors"></div>
+                                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-slate-200 rounded-bl-lg group-hover/code:border-brand-500/50 transition-colors"></div>
+                                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-slate-200 rounded-br-lg group-hover/code:border-brand-500/50 transition-colors"></div>
 
                                         <!-- Label -->
-                                        <span class="text-[10px] uppercase tracking-[0.25em] text-white/30 font-bold">Secure Vault</span>
+                                        <span class="text-[10px] uppercase tracking-[0.25em] text-slate-400 font-bold">Secure Vault</span>
 
                                         <!-- Placeholder -->
                                         <div id="offerCodePlaceholder" class="flex flex-col items-center gap-2 transition-all duration-300">
-                                                <svg class="w-6 h-6 text-white/20 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                                                <span class="text-white/40 font-mono text-sm">[ CODE ENCRYPTED ]</span>
-                                                <span class="text-white/20 text-xs">Tap \"Get Code\" to decrypt</span>
+                                                <svg class="w-6 h-6 text-slate-300 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                                                <span class="text-slate-900 font-mono text-sm">[ CODE ENCRYPTED ]</span>
+                                                <span class="text-slate-500 text-xs">Tap "Get Code" to decrypt</span>
                                         </div>
 
                                         <!-- Revealed Text (Hidden by default) -->
                                         <div id="offerCodeText" class="absolute inset-0 flex items-center justify-center opacity-0 scale-90 blur-sm pointer-events-none transition-all duration-500">
-                                            <span class="text-3xl md:text-4xl font-mono font-bold offer-code-text tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-white to-accent-light">W5B7I4EM8K9</span>
+                                            <span class="text-3xl md:text-4xl font-mono font-bold offer-code-text tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-400 to-teal-500">W5B7I4EM8K9</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <button id="offerCodeBtn" data-state="get" class="offer-copy-btn px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-brand-500/25 transition-all hover:-translate-y-1 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">
+                                <button id="offerCodeBtn" data-state="get" class="offer-copy-btn px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-slate-800 transition-all hover:-translate-y-1 active:scale-95 bg-slate-900 text-white disabled:opacity-70 disabled:cursor-not-allowed">
                                     <span id="offerBtnText">Get Code</span>
                                 </button>
                                 
-                                <p class="text-xs text-white/30 mt-2">Limited time offer. Terms apply.</p>
+                                <p class="text-xs text-slate-400 mt-2">Limited time offer. Terms apply.</p>
                             </div>
                         </div>
                     </div>
@@ -494,40 +479,26 @@
         </section>
     </main>
 
-    <!-- Theme Switch FAB -->
-    <div class="fixed bottom-6 right-6 z-[100]">
-        <button id="theme-toggle" type="button" class="flex items-center justify-center w-14 h-14 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-brand-500/50">
-            <!-- Moon Icon (Dark Mode) -->
-            <svg id="theme-toggle-dark-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-            <!-- Sun Icon (Light Mode) -->
-            <svg id="theme-toggle-light-icon" class="hidden w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-        </button>
-    </div>
-
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
+    <footer class="border-t border-slate-200 bg-slate-50/80 backdrop-blur-sm pt-16 pb-8">
         <div class="container mx-auto max-w-7xl px-6">
             <div class="flex flex-col items-center text-center mb-12">
                 <a href="#" class="flex items-center gap-2 mb-4">
-                    <img src="assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
-                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
+                    <img src="assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-slate-200">
+                    <span class="text-2xl font-heading font-bold text-slate-900">Web IDE</span>
                 </a>
-                <p class="text-white/50 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
-                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
-                    <a href="#" class="hover:text-white transition">Home</a>
-                    <a href="pages/blog/index.html" class="hover:text-white transition">Blog</a>
-                    <a href="pages/docs/index.html" class="hover:text-white transition">Docs</a>
-                    <a href="pages/about/index.html" class="hover:text-white transition">About</a>
-                    <a href="pages/contact/index.html" class="hover:text-white transition">Contact</a>
-                    <a href="pages/privacy/index.html" class="hover:text-white transition">Privacy</a>
-                    <a href="pages/terms/index.html" class="hover:text-white transition">Terms</a>
+                <p class="text-slate-500 max-w-md mx-auto mb-8">Empowering the next generation of mobile-first web developers.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-slate-600">
+                    <a href="#" class="hover:text-slate-900 transition">Home</a>
+                    <a href="pages/blog/index.html" class="hover:text-slate-900 transition">Blog</a>
+                    <a href="pages/docs/index.html" class="hover:text-slate-900 transition">Docs</a>
+                    <a href="pages/about/index.html" class="hover:text-slate-900 transition">About</a>
+                    <a href="pages/contact/index.html" class="hover:text-slate-900 transition">Contact</a>
+                    <a href="pages/privacy/index.html" class="hover:text-slate-900 transition">Privacy</a>
+                    <a href="pages/terms/index.html" class="hover:text-slate-900 transition">Terms</a>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
+            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-200 text-sm text-slate-400">
                 <div>© <span id="year"></span> Web IDE app.</div>
                 <div class="mt-4 md:mt-0">Created with ❤️ by Chuyong Glean.</div>
             </div>
