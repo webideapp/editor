@@ -46,18 +46,29 @@ body {
 }
 
 /* Button Fixes for Get Offer and Install Now visibility */
-.hero-text a[href*="docs"] {
-    color: #ffffff !important;
+/* Specifically targeting the buttons in hero and offer section */
+.hero-text a {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #offerCodeBtn {
-    color: #ffffff !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    min-width: 160px;
+}
+
+/* Ensure span inside buttons inherits color or stays white */
+.bg-slate-900 span {
+    color: #ffffff !important;
+}
+
+.bg-slate-100 span {
+    color: #0f172a !important;
 }
 
 /* Animations */
