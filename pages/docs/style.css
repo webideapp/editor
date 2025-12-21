@@ -96,10 +96,39 @@ article p {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Web IDE Native Terminal Description Card Styling - Flat Design */
+.terminal-feature-card {
+    background-color: #f0f9ff !important; /* Soft light blue background */
+    border: 1px solid #bae6fd !important; /* Matching light blue border */
+    border-radius: 1.5rem !important;
+    padding: 2.5rem !important;
+    color: #000000 !important; /* High contrast black for readability */
+    /* Elevation/Shadows removed for flat appearance */
+    box-shadow: none !important;
+    transition: background-color 0.2s ease;
+}
+
+.terminal-feature-card:hover {
+    /* Transform removed to eliminate layering feel */
+    background-color: #e0f2fe !important; 
+}
+
+.terminal-feature-card h2 {
+    color: #0c4a6e !important; /* Deep navy/blue for heading */
+    margin-bottom: 1rem !important;
+    font-weight: 800 !important;
+}
+
+.terminal-feature-card p.text-description {
+    color: #334155 !important; /* Slate 700 for better readability on light blue */
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+}
+
 /* Light Mode Support for Docs - Improved Contrast */
 .light {
     --bg-main: #ffffff;
-    --text-primary: #111827; /* Darker for better contrast */
+    --text-primary: #111827;
     --text-secondary: #374151;
     --border-color: #e5e7eb;
     --sidebar-bg: #f9fafb;
@@ -135,9 +164,8 @@ article p {
     color: #374151 !important;
 }
 
-/* Target the specific description class for high contrast in light mode */
 .light .text-description {
-    color: #1f2937 !important; /* Dark slate gray for maximum readability */
+    color: #1f2937 !important;
 }
 
 .light .text-white\/40 {
@@ -172,9 +200,8 @@ article p {
     background-color: #ffffff;
 }
 
-/* Fix specifically for text color in nested structures like "Actions" or templates */
 .light .text-brand-400 {
-    color: #0284c7 !important; /* Slightly darker for accessibility on white */
+    color: #0284c7 !important;
 }
 
 .light .text-accent-light {
