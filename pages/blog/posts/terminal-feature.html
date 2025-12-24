@@ -1,17 +1,29 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
-
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7032818106673619" crossorigin="anonymous"></script>
-     
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Streamlining Deployment with the New Terminal — Web IDE Blog</title>
-    <meta name="description" content="Learn how to use the new Git Wizard in Web IDE to push projects to GitHub and deploy with GitHub Pages.">
+    
+    <!-- SEO Optimization -->
+    <title>Streamline Your Workflow: New Terminal & Git Wizard | Web IDE Blog</title>
+    <meta name="description" content="Master mobile web development with Web IDE's new Terminal and Intelligent Git Wizard. Learn how to deploy projects to GitHub and manage remote repositories seamlessly from your mobile device.">
+    <meta name="keywords" content="Web IDE, Mobile Development, Git Wizard, Terminal Feature, GitHub Deployment, Web Development Tools, Mobile Terminal">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Streamline Your Workflow: New Terminal & Git Wizard">
+    <meta property="og:description" content="Reimagining the terminal experience for mobile-first web development and seamless GitHub deployment.">
+    <meta property="og:image" content="../../../assets/images/terminalscreenshot.png">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -19,17 +31,12 @@
                             50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
                             400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
                             800: '#075985', 900: '#0c4a6e',
-                        },
-                        accent: {
-                            light: '#2dd4bf',
-                            DEFAULT: '#0d9488',
-                            dark: '#115e59',
                         }
                     },
                     fontFamily: {
-                        heading: ['Space Grotesk', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
                         body: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
+                        mono: ['"Fira Code"', 'monospace'],
                     }
                 }
             }
@@ -37,101 +44,163 @@
     </script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/post.css">
-<link rel="stylesheet" href="../../../style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body class="font-body text-slate-200 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="../../../index.html" class="flex items-center gap-3 group">
-                    <img src="../../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
-                    <span class="text-xl font-heading font-bold text-white">Web IDE</span>
+                    <img src="../../../assets/icon/webidesqaureicon.jpg" alt="Web IDE Logo" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
+                    <span class="text-xl font-heading font-bold text-white tracking-tight">Web IDE</span>
                 </a>
-                <a href="../index.html" class="text-sm font-medium text-white/60 hover:text-white transition flex items-center gap-2">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                    Back to Blog
-                </a>
+                <nav>
+                    <a href="../index.html" class="text-sm font-medium text-white/60 hover:text-white transition-all flex items-center gap-2 group">
+                        <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        Back to Blog
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Content -->
-    <article class="pt-40 pb-20 px-6">
-        <div class="container mx-auto max-w-3xl">
-            <!-- Meta -->
-            <div class="flex items-center gap-4 text-sm text-white/50 mb-8">
-                <span class="text-green-400 font-bold uppercase tracking-wider">Feature Update</span>
-                <span>•</span>
-                <span id="readTime">Reading...</span>
-                <span>•</span>
-                <span>Dec 20, 2025</span>
-            </div>
+    <main>
+        <article class="pt-32 pb-20 px-6">
+            <div class="container mx-auto max-w-3xl">
+                <!-- Breadcrumbs & Meta -->
+                <header class="mb-10">
+                    <div class="flex flex-wrap items-center gap-4 text-xs font-semibold tracking-widest uppercase mb-6">
+                        <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">Feature Update</span>
+                        <span class="text-white/30 hidden sm:block">•</span>
+                        <span class="text-white/50 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span id="readTime">4 min read</span>
+                        </span>
+                        <span class="text-white/30 hidden sm:block">•</span>
+                        <span class="text-white/50">Dec 23, 2025</span>
+                    </div>
 
-            <!-- Title -->
-            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">Streamlining Deployment with the New Terminal</h1>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
+                        Streamlining Deployment with the <span class="text-brand-500">New Terminal</span>
+                    </h1>
 
-            <!-- Hero Image -->
-            <div class="rounded-2xl overflow-hidden border border-white/10 mb-12 shadow-2xl">
-                <img src="../../../assets/images/terminalscreenshot.png" alt="Web IDE Terminal with Git Wizard" class="w-full">
-            </div>
+                    <p class="text-xl text-slate-400 leading-relaxed font-medium">
+                        Reimagining the command line experience for mobile devices to bridge the gap between complex Git operations and mobile-first usability.
+                    </p>
+                </header>
 
-            <!-- Body -->
-            <div class="prose mx-auto">
-                <p class="lead text-xl text-white/80">The command line can be intimidating on mobile, but it's an essential tool for modern web development. With the latest update to Web IDE, we've reimagined the terminal experience to bridge the gap between complex Git operations and mobile-first usability.</p>
+                <!-- Featured Image -->
+                <figure class="rounded-2xl overflow-hidden border border-white/10 mb-16 shadow-2xl bg-white/5 group">
+                    <img src="../../../assets/images/terminalscreenshot.png" 
+                         alt="Interface showing the Web IDE Terminal and the newly integrated Git Wizard assisting with a code push" 
+                         class="w-full transition-transform duration-700 group-hover:scale-[1.02]">
+                    <figcaption class="px-6 py-4 text-sm text-center text-slate-500 italic">
+                        The new integrated terminal featuring syntax highlighting and mobile-optimized shortcuts.
+                    </figcaption>
+                </figure>
 
-                <h2>The Intelligent Git Wizard</h2>
-                <p>Gone are the days of manually typing long chains of Git commands on a virtual keyboard. We've introduced a smart <strong>Git Wizard</strong> that actively assists you when you're ready to deploy.</p>
-                <p>Simply type <code>git push</code> in the terminal, and the IDE takes over. If you haven't configured your remote repository yet, the wizard guides you through the entire lifecycle:</p>
-                
-                <ul class="steps-list">
-                    <li><strong>Initialization:</strong> Checks if a git repository exists, and creates one if needed.</li>
-                    <li><strong>Staging:</strong> Automatically adds your project files to the staging area.</li>
-                    <li><strong>Committing:</strong> Prompts for a commit message or uses a smart default.</li>
-                    <li><strong>Pushing:</strong> Uploads your code to the designated GitHub branch.</li>
-                </ul>
+                <!-- Article Body -->
+                <div class="prose mx-auto">
+                    <p>The command line can be intimidating on mobile, but it remains an essential tool for modern web development. With the latest update to Web IDE, we've focused on making the terminal more accessible without sacrificing power.</p>
 
-                <h2>Security First: Access Tokens</h2>
-                <p>Security is paramount in modern development. GitHub has deprecated password authentication in favor of more secure methods. Web IDE fully supports <strong>Personal Access Tokens (Classic)</strong>.</p>
-                
-                <div class="callout warning">
-                    <div class="flex gap-3">
-                        <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                        <div>
-                            <strong class="block mb-1 text-yellow-200">Authentication Requirement</strong>
-                            <p>When prompted for a password in the terminal, you <em>must</em> use your GitHub Personal Access Token. Using your standard account password will result in an authentication failure.</p>
+                    <h2>The Intelligent Git Wizard</h2>
+                    <p>Gone are the days of manually typing long chains of Git commands on a virtual keyboard. We've introduced a smart <strong>Git Wizard</strong> that actively assists you when you're ready to deploy.</p>
+                    
+                    <p>Simply type <code>git push</code> in the terminal, and the IDE takes over. If you haven't configured your remote repository yet, the wizard guides you through the entire lifecycle via an intuitive interface:</p>
+                    
+                    <ul class="space-y-4">
+                        <li><strong>Initialization:</strong> The wizard automatically checks if a local Git repository exists. If not, it initializes one with appropriate <code>.gitignore</code> defaults.</li>
+                        <li><strong>Staging:</strong> No need to <code>git add .</code> manually. The system identifies your changes and prepares them for commit.</li>
+                        <li><strong>Committing:</strong> You'll be prompted for a commit message. We've even added smart suggestions based on your recent file changes.</li>
+                        <li><strong>Pushing:</strong> Securely uploads your code to the designated GitHub branch using encrypted credentials.</li>
+                    </ul>
+
+                    <h2>Security First: Access Tokens</h2>
+                    <p>Security is paramount in modern development. GitHub has deprecated password authentication in favor of more secure methods. Web IDE fully supports <strong>Personal Access Tokens (Classic)</strong> to keep your workflow secure.</p>
+                    
+                    <div class="callout warning my-10">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong class="block mb-1 text-yellow-200 uppercase tracking-wide text-xs">Authentication Requirement</strong>
+                                <p class="text-sm text-yellow-100/80 leading-relaxed">
+                                    When prompted for a password in the terminal, you <strong>must</strong> use your GitHub Personal Access Token. Standard account passwords will result in an authentication failure due to GitHub's API security policies.
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <p>You can generate a token in your GitHub Developer Settings. For the best experience, ensure you check the <code>repo</code> scope to allow Web IDE to write to your repositories and manage branches.</p>
+
+                    <h2>Seamless Deployment to GitHub Pages</h2>
+                    <p>The ultimate goal of many web projects is to be seen. The new terminal integration makes enabling GitHub Pages seamless. Once your push is successful, follow these steps to go live:</p>
+                    
+                    <ol class="space-y-3">
+                        <li>Open your repository settings on the GitHub website.</li>
+                        <li>Navigate to the <strong>Pages</strong> tab in the sidebar.</li>
+                        <li>Select your deployment branch (typically <code>main</code>) as the source.</li>
+                        <li>Click Save. Your site will be live on the web within minutes!</li>
+                    </ol>
+
+                    <h3>Why use the CLI on Mobile?</h3>
+                    <p>While GUI buttons are convenient, the terminal offers unparalleled precision. You can see exactly what files are being staged and catch errors before they leave your device. It's professional-grade control, optimized for touch-based interaction.</p>
                 </div>
                 
-                <p>You can generate a token in your GitHub Developer Settings. Ensure you check the <code>repo</code> scope to allow Web IDE to write to your repositories.</p>
-
-                <h2>Deploying to GitHub Pages</h2>
-                <p>The ultimate goal of many web projects is to be seen. The new terminal integration makes enabling GitHub Pages seamless.</p>
-                <p>As seen in the screenshot above, once your push is successful, the terminal provides direct feedback on your branch status (e.g., <code>main -> main</code>). From there, the process is simple:</p>
-                <ol>
-                    <li>Go to your repository settings on GitHub.</li>
-                    <li>Navigate to the <strong>Pages</strong> section.</li>
-                    <li>Select your branch (usually <code>main</code>) as the source.</li>
-                    <li>Save, and your site is live on the web!</li>
-                </ol>
-
-                <h3>Why use the CLI on Mobile?</h3>
-                <p>While GUI buttons are great, the terminal offers precision. You can see exactly what files are being staged and catch errors before they leave your device. It's professional-grade control, optimized for touch.</p>
+                <!-- Post Footer / Actions -->
+                <footer class="mt-16 pt-10 border-t border-white/10">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="text-white/40 text-sm">Share this article</div>
+                            <div class="flex gap-2">
+                                <button onclick="copyLink()" class="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all text-white/80 hover:text-white" aria-label="Copy page link">
+                                    <svg class="share-button-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <img src="../../../assets/icon/webidecircularicon.png" alt="Author" class="w-8 h-8 rounded-full border border-white/20">
+                            <span class="text-sm text-white/60 font-medium">Web IDE Engineering Team</span>
+                        </div>
+                    </div>
+                </footer>
             </div>
-            
-            <!-- Actions -->
-            <div class="mt-12 pt-12 border-t border-white/10 flex justify-between items-center">
-                <div class="text-white/60">Share this article:</div>
-                <button id="shareBtn" onclick="copyLink()" class="px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition flex items-center gap-2 text-white">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-                    <span>Copy Link</span>
-                </button>
-            </div>
-        </div>
-    </article>
+        </article>
+    </main>
 
+    <!-- Scripts -->
     <script src="../script.js"></script>
-    <script src="../actions/interactions.js"></script>
+    <script src="../../../script.js"></script>
+    <script>
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.querySelector('button[aria-label="Copy page link"]');
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+                setTimeout(() => btn.innerHTML = originalHtml, 2000);
+            });
+        }
 
-<script src="../../../script.js"></script><script src="../../docs/script.js"></script><script src="../../about/script.js"></script><script src="../../contact/script.js"></script><script src="script.js"></script><script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script></body></html>
+        // Calculate reading time
+        document.addEventListener('DOMContentLoaded', () => {
+            const text = document.querySelector('.prose').innerText;
+            const wpm = 225;
+            const words = text.trim().split(/\s+/).length;
+            const time = Math.ceil(words / wpm);
+            document.getElementById('readTime').innerText = `${time} min read`;
+        });
+    </script>
+</body>
+</html>
