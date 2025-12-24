@@ -2,6 +2,9 @@
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   --brand-500: #0ea5e9;
+  --terminal-bg: #1e293b;
+  --card-bg-light: #f0f9ff;
+  --card-border-light: #bae6fd;
 }
 
 html {
@@ -96,33 +99,143 @@ article p {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Web IDE Native Terminal Description Card Styling - Flat Design */
-.terminal-feature-card {
-    background-color: #f0f9ff !important; /* Soft light blue background */
-    border: 1px solid #bae6fd !important; /* Matching light blue border */
-    border-radius: 1.5rem !important;
-    padding: 2.5rem !important;
-    color: #000000 !important; /* High contrast black for readability */
-    /* Elevation/Shadows removed for flat appearance */
-    box-shadow: none !important;
-    transition: background-color 0.2s ease;
+/* ========================================================================== 
+   Redesigned Terminal Feature Card (Dark Theme Enforced) 
+   ========================================================================== */
+
+.terminal-section-container {
+    width: 100%;
 }
 
-.terminal-feature-card:hover {
-    /* Transform removed to eliminate layering feel */
-    background-color: #e0f2fe !important; 
+.terminal-showcase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Enforce Dark Theme for Terminal Aesthetic regardless of page mode */
+    background-color: #0f172a; /* Slate 900 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.terminal-feature-card h2 {
-    color: #0c4a6e !important; /* Deep navy/blue for heading */
-    margin-bottom: 1rem !important;
-    font-weight: 800 !important;
+/* Hover effect for the whole card */
+.terminal-showcase:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(56, 189, 248, 0.3);
 }
 
-.terminal-feature-card p.text-description {
-    color: #334155 !important; /* Slate 700 for better readability on light blue */
-    font-weight: 400 !important;
-    line-height: 1.6 !important;
+/* 1. Terminal Window (Visual Top) */
+.terminal-window {
+    background-color: #1e293b; /* Slate 800 */
+    padding: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+}
+
+.terminal-header {
+    height: 36px;
+    background-color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.window-controls {
+    position: absolute;
+    left: 1rem;
+    display: flex;
+    gap: 6px;
+}
+
+.control {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.control.close {
+    background-color: #ef4444;
+}
+
+.control.minimize {
+    background-color: #fbbf24;
+}
+
+.control.expand {
+    background-color: #22c55e;
+}
+
+.window-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.terminal-body {
+    position: relative;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+}
+
+.terminal-img {
+    width: 100%;
+    height: auto;
+    opacity: 0.95;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* 2. Info Card (Content Bottom) */
+.terminal-info-card {
+    padding: 2rem;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    /* Smooth gradient to merge with terminal window */
+    background: linear-gradient(to bottom, #1e293b 0%, #0f172a 100%);
+}
+
+.badge-container {
+    margin-bottom: 1rem;
+}
+
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background-color: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Fix: Ensure High Visibility for Title on Dark Card */
+.feature-title {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.feature-description {
+    color: #94a3b8; /* Slate 400 */
+    line-height: 1.6;
+    font-size: 1rem;
+    max-width: 65ch;
 }
 
 /* Light Mode Support for Docs - Improved Contrast */
@@ -153,23 +266,49 @@ article p {
     color: #111827;
 }
 
-/* Explicit color overrides for better readability in light mode */
+/* OVERRIDE: Keep Terminal Card Dark & Text White even in Light Mode */
+.light .terminal-showcase {
+    background-color: #0f172a;
+    border-color: rgba(0,0,0,0.1);
+}
+
+.light .terminal-showcase .feature-title {
+    color: #ffffff !important; /* Force White on Dark Card */
+}
+
+.light .terminal-showcase .feature-description {
+    color: #94a3b8 !important; /* Force Slate 400 on Dark Card */
+}
+
+.light .terminal-showcase .feature-badge {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+/* Explicit color overrides for better readability in light mode (Generic) */
 .light p, .light li {
-    color: #374151 !important;
+    color: #374151;
 }
 
 .light .text-white\/70, 
 .light .text-white\/60, 
 .light .text-white\/50 {
-    color: #374151 !important;
+    color: #374151;
+}
+
+/* Override for text inside dark terminals in light mode to remain light */
+.light .bg-\[\#0f172a\] .text-white\/50, 
+.light .bg-\[\#0f172a\] .text-white\/30 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .light .text-description {
-    color: #1f2937 !important;
+    color: #1f2937;
 }
 
 .light .text-white\/40 {
-    color: #6b7280 !important;
+    color: #6b7280;
 }
 
 .light .bg-white\/5 {
@@ -178,7 +317,12 @@ article p {
 }
 
 .light .text-white {
-    color: #111827 !important;
+    color: #111827;
+}
+
+/* Exception for text specifically inside the Terminal Showcase */
+.light .terminal-showcase .text-white {
+    color: #ffffff !important;
 }
 
 .light code {
@@ -191,9 +335,11 @@ article p {
     border-color: #e5e7eb;
 }
 
+/* Fix: Ensure Terminal/Console blocks remain dark in Light Mode */
 .light .bg-\[\#0f172a\] {
-    background-color: #f9fafb;
-    border-color: #e5e7eb;
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #f8fafc;
 }
 
 .light .bg-\[\#050505\] {
@@ -201,14 +347,26 @@ article p {
 }
 
 .light .text-brand-400 {
-    color: #0284c7 !important;
+    color: #0284c7;
 }
 
 .light .text-accent-light {
-    color: #0d9488 !important;
+    color: #0d9488;
 }
 
 .light .bg-brand-500\/5 {
-    background-color: #f0f9ff !important;
-    border-color: #bae6fd !important;
+    background-color: #f0f9ff;
+    border-color: #bae6fd;
+}
+
+/* Ensure headers in the enhanced Git Wizard are dark text in light mode */
+.light .bg-blue-500\/10 {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+}
+.light .bg-blue-500\/10 .text-blue-300 {
+    color: #1d4ed8;
+}
+.light .bg-blue-500\/10 .text-white\/70 {
+    color: #1e40af;
 }
