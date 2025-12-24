@@ -63,7 +63,7 @@
             <div class="flex items-center gap-4 text-sm text-white/50 mb-8">
                 <span class="text-green-400 font-bold uppercase tracking-wider">Feature Update</span>
                 <span>•</span>
-                <span id="readTime">4 min read</span>
+                <span id="readTime">Reading...</span>
                 <span>•</span>
                 <span>Dec 20, 2025</span>
             </div>
@@ -78,28 +78,43 @@
 
             <!-- Body -->
             <div class="prose mx-auto">
-                <p>The command line can be intimidating on mobile, but it's an essential tool for modern web development. With the latest update to Web IDE, we've reimagined the terminal experience to bridge the gap between complex Git operations and mobile-first usability.</p>
+                <p class="lead text-xl text-white/80">The command line can be intimidating on mobile, but it's an essential tool for modern web development. With the latest update to Web IDE, we've reimagined the terminal experience to bridge the gap between complex Git operations and mobile-first usability.</p>
 
                 <h2>The Intelligent Git Wizard</h2>
-                <p>Gone are the days of manually typing long chains of Git commands on a virtual keyboard. We've introduced a smart <strong>Git Wizard</strong> that detects when you're trying to push code.</p>
-                <p>Simply type <code>git push</code> in the terminal, and the IDE takes over. If you haven't configured your remote repository yet, the wizard guides you through:</p>
-                <ol>
-                    <li>Initializing the repository.</li>
-                    <li>Adding your files.</li>
-                    <li>Committing changes with a default or custom message.</li>
-                    <li>Pushing to your designated GitHub branch.</li>
-                </ol>
+                <p>Gone are the days of manually typing long chains of Git commands on a virtual keyboard. We've introduced a smart <strong>Git Wizard</strong> that actively assists you when you're ready to deploy.</p>
+                <p>Simply type <code>git push</code> in the terminal, and the IDE takes over. If you haven't configured your remote repository yet, the wizard guides you through the entire lifecycle:</p>
+                
+                <ul class="steps-list">
+                    <li><strong>Initialization:</strong> Checks if a git repository exists, and creates one if needed.</li>
+                    <li><strong>Staging:</strong> Automatically adds your project files to the staging area.</li>
+                    <li><strong>Committing:</strong> Prompts for a commit message or uses a smart default.</li>
+                    <li><strong>Pushing:</strong> Uploads your code to the designated GitHub branch.</li>
+                </ul>
 
                 <h2>Security First: Access Tokens</h2>
-                <p>Security is paramount. GitHub no longer accepts account passwords for command-line operations. Web IDE fully supports <strong>Personal Access Tokens (classic)</strong>.</p>
-                <div class="bg-yellow-500/10 border-l-4 border-yellow-500 p-4 my-6 rounded-r">
-                    <p class="text-yellow-200 m-0 text-sm"><strong>Note:</strong> When prompted for a password, you <em>must</em> use your GitHub Personal Access Token. Standard passwords will result in an authentication failure.</p>
+                <p>Security is paramount in modern development. GitHub has deprecated password authentication in favor of more secure methods. Web IDE fully supports <strong>Personal Access Tokens (Classic)</strong>.</p>
+                
+                <div class="callout warning">
+                    <div class="flex gap-3">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        <div>
+                            <strong class="block mb-1 text-yellow-200">Authentication Requirement</strong>
+                            <p>When prompted for a password in the terminal, you <em>must</em> use your GitHub Personal Access Token. Using your standard account password will result in an authentication failure.</p>
+                        </div>
+                    </div>
                 </div>
+                
                 <p>You can generate a token in your GitHub Developer Settings. Ensure you check the <code>repo</code> scope to allow Web IDE to write to your repositories.</p>
 
                 <h2>Deploying to GitHub Pages</h2>
                 <p>The ultimate goal of many web projects is to be seen. The new terminal integration makes enabling GitHub Pages seamless.</p>
-                <p>As seen in the screenshot above, once your push is successful, the terminal provides direct feedback on your branch status (e.g., <code>main -&gt; main</code>). From there, you can hop over to your repository settings on GitHub and enable <strong>GitHub Pages</strong> to host your site live on the web in seconds.</p>
+                <p>As seen in the screenshot above, once your push is successful, the terminal provides direct feedback on your branch status (e.g., <code>main -> main</code>). From there, the process is simple:</p>
+                <ol>
+                    <li>Go to your repository settings on GitHub.</li>
+                    <li>Navigate to the <strong>Pages</strong> section.</li>
+                    <li>Select your branch (usually <code>main</code>) as the source.</li>
+                    <li>Save, and your site is live on the web!</li>
+                </ol>
 
                 <h3>Why use the CLI on Mobile?</h3>
                 <p>While GUI buttons are great, the terminal offers precision. You can see exactly what files are being staged and catch errors before they leave your device. It's professional-grade control, optimized for touch.</p>
