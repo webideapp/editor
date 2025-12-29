@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Section | Component Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        surface: '#0F0F0F',
+                        accent: '#007AFF',
+                        'accent-dark': '#005BBF',
+                        slate: '#94A3B8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="offer-section/style.css"></head>
+<body class="bg-dark text-white min-h-screen flex items-center justify-center p-4 md:p-10 font-sans">
+
+    <!-- Main Offer Section Component -->
+    <section id="special-offer" class="w-full max-w-5xl relative">
+        <div class="offer-card-wrapper relative rounded-[2rem] md:rounded-[3rem] bg-surface border border-white/5 p-1">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-purple-900/10 rounded-[2rem] md:rounded-[3rem]"></div>
+            
+            <div class="relative bg-dark/40 backdrop-blur-xl rounded-[1.8rem] md:rounded-[2.8rem] p-8 md:p-16 overflow-hidden">
+                <div class="offer-glow"></div>
+                
+                <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest">
+                            <i class="fa-solid fa-gift"></i> Limited Time Offer
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight">
+                            Unlock Your <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-500">Premium Access</span>
+                        </h2>
+                        <p class="text-slate text-lg leading-relaxed max-w-md">
+                            Get 3 months of premium AI features and advanced cloud shell access. Secure your unique access code below.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start pt-4">
+                            <button id="reveal-offer-btn" class="reveal-btn group flex items-center justify-center gap-3 px-8 py-4 bg-accent hover:bg-accent-dark text-white rounded-2xl font-bold transition-all shadow-[0_10px_30px_rgba(0,122,255,0.3)] disabled:opacity-50 disabled:cursor-not-allowed min-w-[200px]">
+                                <i id="offer-copy-icon" class="fa-solid fa-unlock-keyhole"></i>
+                                <span id="offer-btn-text">Reveal My Code</span>
+                            </button>
+                            <p class="text-[10px] text-slate/40 sm:self-center text-center sm:text-left">
+                                *One-time use per 10 ai uses.<br>Terms and conditions apply.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <!-- Decorative Background Glow -->
+                        <div class="absolute -inset-4 bg-accent/20 blur-[60px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        
+                        <div class="relative bg-black/60 border border-white/10 rounded-3xl p-10 text-center backdrop-blur-sm">
+                            <div class="mb-6 text-[10px] font-mono text-accent/60 uppercase tracking-[0.3em] font-bold">Secure Verification Protocol</div>
+                            
+                            <div class="relative h-32 flex items-center justify-center bg-surface/80 rounded-2xl border border-white/5 shadow-inner overflow-hidden">
+                                <!-- Code Display Area -->
+                                <div id="offer-code-display" class="code-display text-2xl md:text-4xl font-bold text-white tracking-[0.2em] hidden"></div>
+
+                                <!-- Timer Display -->
+                                <div id="offer-timer-container" class="hidden flex-col items-center justify-center">
+                                    <div class="text-[9px] uppercase tracking-[0.3em] text-slate/60 mb-1 animate-pulse">Decrypting</div>
+                                    <div id="offer-timer-count" class="text-3xl font-mono text-white font-bold tracking-wider">00:08</div>
+                                </div>
+                                
+                                <!-- Overlay -->
+                                <div id="offer-overlay" class="secret-overlay absolute inset-0 bg-zinc-900/95 flex items-center justify-center cursor-pointer transition-opacity duration-500" tabindex="0" role="button" aria-label="Start Decryption">
+                                    <div class="flex flex-col items-center gap-4">
+                                        <div class="flex gap-3">
+                                            <div class="w-2.5 h-2.5 rounded-full bg-accent animate-bounce"></div>
+                                            <div class="w-2.5 h-2.5 rounded-full bg-accent animate-bounce [animation-delay:0.2s]"></div>
+                                            <div class="w-2.5 h-2.5 rounded-full bg-accent animate-bounce [animation-delay:0.4s]"></div>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-slate/60">
+                                            <i class="fa-solid fa-shield-halved text-[10px]"></i>
+                                            <span class="text-[10px] uppercase tracking-[0.2em] font-semibold">Encrypted Channel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 flex justify-center items-center gap-4">
+                                <div class="h-px w-8 bg-white/5"></div>
+                                <div class="text-[10px] text-slate/30 font-mono">AES-256 BIT ENCRYPTION</div>
+                                <div class="h-px w-8 bg-white/5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+</body></html>
