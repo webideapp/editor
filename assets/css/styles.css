@@ -1,0 +1,319 @@
+:root {
+    --dark: #050505;
+    --surface: #0F0F0F;
+    --accent: #007AFF;
+    --accent-dark: #005BBF;
+    --slate: #94A3B8;
+    --transition: cubic-bezier(0.2, 0, 0, 1);
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark);
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Navbar Styling */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 1.5px;
+    background: var(--accent);
+    transition: width 0.3s var(--transition);
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Nav Links */
+.mobile-nav-link {
+    display: block;
+    color: var(--slate);
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.mobile-nav-link:hover {
+    color: white;
+}
+
+/* Hero Mockup Styling */
+.hero-mockup-container {
+    transition: transform 0.6s var(--transition);
+    perspective: 2000px;
+}
+
+.iphone-frame {
+    width: 320px;
+    height: 640px;
+    background: #000;
+    border: 12px solid #1a1a1a;
+    border-radius: 4.5rem;
+    position: relative;
+    box-shadow: 
+        0 10px 20px rgba(0,0,0,0.5), 
+        0 40px 100px rgba(0,0,0,0.8), 
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Dynamic Notch */
+.iphone-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    background: #000;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    z-index: 20;
+}
+
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0F0F0F;
+    border-radius: 3.7rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mockup Header - Positioning Fix for File Name Visibility */
+.iphone-screen > div:first-child {
+    padding: 2.25rem 1.25rem 0.75rem 1.25rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-blur: 10px;
+}
+
+/* Editor Content Fitting Fixes */
+.iphone-editor-content {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 1.25rem;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.iphone-editor-content::-webkit-scrollbar {
+    display: none;
+}
+
+.iphone-editor-content .code-line {
+    display: flex;
+    gap: 0.75rem;
+    white-space: nowrap;
+}
+
+.iphone-editor-content .line-number {
+    color: rgba(148, 163, 184, 0.3);
+    width: 1.2rem;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* AI Suggestion Box inside Mockup */
+.mockup-ai-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 122, 255, 0.1);
+    border: 1px solid rgba(0, 122, 255, 0.2);
+    border-radius: 1rem;
+}
+
+/* Cards & Bento Grid */
+.hover-lift {
+    transition: all 0.5s var(--transition);
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 122, 255, 0.3);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+/* Terminal Effects */
+.terminal-window {
+    box-shadow: 0 50px 120px -30px rgba(0,0,0,0.9), inset 0 1px 1px rgba(255,255,255,0.05);
+    background: #0F0F0F;
+}
+
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Reveal Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s var(--transition), transform 1s var(--transition);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Language Icons Animation */
+#languages .hover-lift:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s var(--transition);
+}
+
+/* Scroll Action Button (Updated Size and Style) */
+.scroll-action-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: var(--slate);
+    padding: 0;
+}
+
+.scroll-action-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
+}
+
+/* SVG Icon Styling for Button */
+.scroll-action-btn svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Spring-like transition */
+    stroke-width: 2.5px;
+}
+
+/* Logic for Icon Rotation: Default is Down, Active Class rotates to Up */
+#scrollToTopBtn.is-top-mode svg {
+    transform: rotate(180deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .iphone-frame {
+        width: 280px;
+        height: 560px;
+    }
+    .iphone-editor-content {
+        font-size: 10px;
+        padding: 1rem;
+    }
+    .iphone-screen > div:first-child {
+        padding-top: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .iphone-frame {
+        width: 260px;
+        height: 520px;
+        border-radius: 3.5rem;
+    }
+    .iphone-screen {
+        border-radius: 2.8rem;
+    }
+    .iphone-frame::after {
+        width: 80px;
+        height: 25px;
+    }
+    .iphone-editor-content {
+        font-size: 9px;
+    }
+    .iphone-screen > div:first-child {
+        padding-top: 1.75rem;
+    }
+    
+    /* Resize scroll button for mobile */
+    .scroll-action-btn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+    .scroll-action-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
