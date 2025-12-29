@@ -1,85 +1,104 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Terms of Service — Web IDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Web IDE</title>
+    <link rel="icon" href="../../images/favicon/favicon.jpg" type="image/jpeg">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7032818106673619" crossorigin="anonymous"></script>
+
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5XN0H3N96"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H5XN0H3N96');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
-                        accent: { light: '#2dd4bf', DEFAULT: '#0d9488', dark: '#115e59' }
+                        dark: '#050505',
+                        surface: '#0F0F0F',
+                        accent: '#007AFF',
+                        slate: '#94A3B8',
                     },
                     fontFamily: {
-                        heading: ['Space Grotesk', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../contact/style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+</head>
+<body class="bg-dark text-white antialiased selection:bg-accent/30 selection:text-white">
+    <nav id="main-nav" class="fixed top-0 w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="../../images/favicon/favicon.jpg" alt="Web IDE Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight">Web IDE</span>
+            </a>
+            <a href="../../index.html" class="text-sm font-medium text-slate hover:text-white transition-colors">Back to Home</a>
+        </div>
+    </nav>
 
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
-        <div class="mx-auto max-w-7xl px-6">
-            <div class="flex items-center justify-between h-16">
-                <a href="../../index.html" class="flex items-center gap-3 group">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10 shadow-sm">
-                    <span class="font-heading font-bold text-lg text-white">Web IDE <span class="text-white/40 font-normal">Terms</span></span>
-                </a>
-                <nav class="hidden md:flex items-center gap-6">
-                     <a href="../../index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Home</a>
-                     <a href="../contact/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Contact</a>
-                </nav>
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <header class="mb-16 reveal-up">
+                <h1 class="text-5xl font-display font-bold mb-6 tracking-tight">Terms of Service</h1>
+                <p class="text-slate">Last updated: May 24, 2024</p>
+            </header>
+
+            <div class="prose prose-invert max-w-none space-y-12 text-slate leading-relaxed">
+                <section class="reveal-up">
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Introduction</h2>
+                    <p>Welcome to Web IDE. By accessing or using our mobile application and website, you agree to be bound by these Terms and Conditions. Please read them carefully before using our services.</p>
+                </section>
+
+                <section class="reveal-up">
+                    <h2 class="text-2xl font-bold text-white mb-4">2. Intellectual Property</h2>
+                    <p>The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of Web IDE and its licensors. Your code remains yours; we claim no ownership over the projects you create within the app.</p>
+                </section>
+
+                <section class="reveal-up">
+                    <h2 class="text-2xl font-bold text-white mb-4">3. User Conduct</h2>
+                    <p>You agree not to use the service for any purpose that is prohibited by these Terms. You are responsible for all of your activity in connection with the Service and shall abide by all applicable local, state, national, and international laws.</p>
+                </section>
+
+                <section class="reveal-up">
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Pro Subscription</h2>
+                    <p>Pro features are billed on a subscription basis. You will be billed in advance on a recurring and periodic basis. Subscription periods are set either on a monthly or annual basis, depending on the plan you select.</p>
+                </section>
+
+                <section class="reveal-up">
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Disclaimers</h2>
+                    <p>Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. Web IDE does not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
+                </section>
             </div>
         </div>
-    </header>
+    </main>
 
-    <!-- Content -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="container mx-auto max-w-3xl">
-            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-10">Terms of Service</h1>
-            
-            <div class="prose prose-lg prose-invert max-w-none text-white/70">
-                <p>Last updated: October 27, 2023</p>
-                <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Web IDE mobile application (the "Service") operated by Web IDE ("us", "we", or "our").</p>
-
-                <h3 class="text-white font-bold text-xl mt-8 mb-4">1. Conditions of Use</h3>
-                <p>By accessing this Service, you certify that you have read and review this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to leave the website accordingly.</p>
-
-                <h3 class="text-white font-bold text-xl mt-8 mb-4">2. Intellectual Property</h3>
-                <p>You agree that all materials, products, and services provided on this website are the property of Web IDE, its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property.</p>
-
-                <h3 class="text-white font-bold text-xl mt-8 mb-4">3. User Obligations</h3>
-                <p>As a user of this website, you may be asked to register with us and provide private information. You are responsible for ensuring the accuracy of this information, and you are responsible for maintaining the safety and security of your identifying information.</p>
-
-                <h3 class="text-white font-bold text-xl mt-8 mb-4">4. Applicable Law</h3>
-                <p>By visiting this website, you agree that the laws of the location of our headquarters, without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between Web IDE and you.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-12 pb-8">
-        <div class="container mx-auto max-w-7xl px-6 flex flex-col items-center">
-             <div class="text-sm text-white/40">© <span id="year"></span> Web IDE app. All rights reserved.</div>
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate/50 uppercase tracking-widest">
+            <p>&copy; 2024 Web IDE. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'light') document.documentElement.classList.add('light');
-            document.getElementById('year').textContent = new Date().getFullYear();
-        });
-    </script>
-
-<script src="../../script.js"></script><script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script><script src="../contact/script.js"></script></body></html>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
