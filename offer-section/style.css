@@ -1,0 +1,72 @@
+/* Scoped Styles for Offer Section */
+
+/* Glow Effects */
+.offer-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    top: -50%;
+    left: -20%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Reveal Animation for Code */
+@keyframes revealPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02) translateY(0);
+        filter: blur(0px);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reveal-pulse {
+    animation: revealPulse 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    display: block !important;
+}
+
+/* Overlay Transition */
+#offer-overlay {
+    transition: opacity 0.5s ease, background-color 0.3s ease;
+}
+
+#offer-overlay:hover {
+    background-color: rgba(24, 24, 27, 0.9); /* slight lighten on hover */
+}
+
+/* Button States */
+.reveal-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-btn:active {
+    transform: scale(0.98);
+}
+
+/* Timer Font Settings */
+#offer-timer-count {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+/* Shimmer Effect for encyrpted look */
+@keyframes shimmer {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.animate-pulse {
+    animation: shimmer 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
