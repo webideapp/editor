@@ -1,111 +1,105 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth light"><head>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us — Web IDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Web IDE</title>
+    <link rel="icon" href="../../images/favicon/favicon.jpg" type="image/jpeg">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7032818106673619" crossorigin="anonymous"></script>
+
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5XN0H3N96"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H5XN0H3N96');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' },
-                        accent: { light: '#2dd4bf', DEFAULT: '#0d9488', dark: '#115e59' }
+                        dark: '#050505',
+                        surface: '#0F0F0F',
+                        accent: '#007AFF',
+                        slate: '#94A3B8',
                     },
                     fontFamily: {
-                        heading: ['Space Grotesk', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/blog/style.css"><link rel="stylesheet" href="pages/blog/styles/post.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/about/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="pages/terms/style.css"><link rel="stylesheet" href="../docs/style.css"><link rel="stylesheet" href="../blog/style.css"><link rel="stylesheet" href="../blog/styles/post.css"><link rel="stylesheet" href="../privacy/style.css"><link rel="stylesheet" href="../about/style.css"><link rel="stylesheet" href="../terms/style.css"></head>
-<body class="font-body text-slate-50 bg-main antialiased selection:bg-brand-500/30 selection:text-brand-200 overflow-x-hidden">
+</head>
+<body class="bg-dark text-white antialiased selection:bg-accent/30 selection:text-white">
+    <nav id="main-nav" class="fixed top-0 w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="../../images/favicon/favicon.jpg" alt="Web IDE Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight">Web IDE</span>
+            </a>
+            <a href="../../index.html" class="text-sm font-medium text-slate hover:text-white transition-colors">Back to Home</a>
+        </div>
+    </nav>
 
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md">
-        <div class="mx-auto max-w-7xl px-6">
-            <div class="flex items-center justify-between h-20">
-                <a href="../../index.html" class="flex items-center gap-3 group">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-10 h-10 rounded-xl border border-white/10 shadow-lg">
-                    <span class="text-xl font-heading font-bold text-white">Web IDE</span>
-                </a>
-                <nav class="hidden md:flex items-center gap-6">
-                    <a href="../../index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Home</a>
-                    <a href="../blog/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Blog</a>
-                    <a href="../docs/index.html" class="text-sm font-medium text-white/60 hover:text-white transition">Docs</a>
-                    <a href="#" class="text-sm font-medium text-white bg-white/10 px-4 py-2 rounded-full transition">Contact</a>
-                </nav>
+    <main class="pt-32 pb-24 px-6">
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-12 reveal-up">
+                <h1 class="text-5xl font-display font-bold mb-6 tracking-tight">Get in touch</h1>
+                <p class="text-slate text-lg">Have questions? We're here to help you build better.</p>
+            </div>
+
+            <div class="bg-surface/50 border border-white/5 p-8 md:p-10 rounded-[2.5rem] backdrop-blur-xl reveal-up delay-100">
+                <form action="mailto:chuyongglean@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-xs font-bold uppercase tracking-widest text-slate mb-2 ml-1">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Steve Jobs"
+                               class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all text-white placeholder:text-white/20">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs font-bold uppercase tracking-widest text-slate mb-2 ml-1">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="steve@apple.com"
+                               class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all text-white placeholder:text-white/20">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs font-bold uppercase tracking-widest text-slate mb-2 ml-1">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="How can we help?"
+                                  class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/10 transition-all text-white placeholder:text-white/20 resize-none"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full py-5 bg-accent text-white rounded-2xl font-bold hover:bg-accent-dark transition-all transform hover:-translate-y-1 shadow-[0_20px_40px_rgba(0,122,255,0.2)] uppercase tracking-widest text-sm">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-12 text-center text-slate text-sm reveal-up delay-200">
+                <p>Typical response time: Within 24 hours</p>
             </div>
         </div>
-    </header>
+    </main>
 
-    <!-- Content -->
-    <section class="pt-24 pb-16 md:pt-32 md:pb-20 px-6 min-h-screen flex flex-col justify-center relative overflow-hidden">
-        <!-- Background Gradients -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[100px] -z-10"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-dark/10 rounded-full blur-[100px] -z-10"></div>
-
-        <div class="container mx-auto max-w-lg relative z-10">
-            <div class="text-center mb-10">
-                <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">Get in touch</h1>
-                <p class="text-white/60">Have a question or feedback? We're here to help.</p>
-            </div>
-
-            <form id="contactForm" class="space-y-4 bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-sm">
-                <div>
-                    <label class="block text-sm font-medium text-white/70 mb-2">Name</label>
-                    <input type="text" placeholder="John Doe" class="w-full p-4 rounded-xl bg-black/20 border border-white/10 focus:border-brand-500 focus:bg-white/5 outline-none transition text-white" required="">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-white/70 mb-2">Email</label>
-                    <input type="email" id="email" placeholder="john@example.com" class="w-full p-4 rounded-xl bg-black/20 border border-white/10 focus:border-brand-500 focus:bg-white/5 outline-none transition text-white" required="">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-white/70 mb-2">Subject</label>
-                    <input type="text" id="subject" placeholder="How can we help?" class="w-full p-4 rounded-xl bg-black/20 border border-white/10 focus:border-brand-500 focus:bg-white/5 outline-none transition text-white" required="">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-white/70 mb-2">Message</label>
-                    <textarea id="message" rows="5" placeholder="Tell us more..." class="w-full p-4 rounded-xl bg-black/20 border border-white/10 focus:border-brand-500 focus:bg-white/5 outline-none transition text-white" required=""></textarea>
-                </div>
-                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold shadow-lg hover:shadow-brand-500/25 transition transform hover:-translate-y-1">Send Message</button>
-            </form>
-
-            <div class="mt-10 text-center text-sm text-white/40">
-                <p>Or email us directly at <a href="mailto:support@webide.app" class="text-brand-400 hover:underline">chuyongglean@gmail.com</a></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black/40 backdrop-blur-sm pt-16 pb-8">
-        <div class="container mx-auto max-w-7xl px-6">
-            <div class="flex flex-col items-center text-center mb-12">
-                <a href="../../index.html" class="flex items-center gap-2 mb-4">
-                    <img src="../../assets/icon/webidesqaureicon.jpg" alt="Web IDE" class="w-8 h-8 rounded-lg border border-white/10">
-                    <span class="text-2xl font-heading font-bold text-white">Web IDE</span>
-                </a>
-                <div class="flex flex-wrap justify-center items-center gap-6 text-white/60">
-                    <a href="../../index.html" class="hover:text-white transition">Home</a>
-                    <a href="../about/index.html" class="hover:text-white transition">About</a>
-                    <a href="../privacy/index.html" class="hover:text-white transition">Privacy</a>
-                    <a href="../terms/index.html" class="hover:text-white transition">Terms</a>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-white/40">
-                <div>© <span id="year"></span> Web IDE app.</div>
-                <div class="mt-4 md:mt-0">Created with ❤️ by Chuyong Glean.</div>
-            </div>
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate/50 uppercase tracking-widest">
+            <p>&copy; 2024 Web IDE. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script src="script.js"></script>
 
-
-          <script src="pages/docs/script.js"></script><script src="pages/blog/script.js"></script><script src="pages/blog/actions/interactions.js"></script><script src="pages/about/script.js"></script><script src="pages/contact/script.js"></script><script src="../../script.js"></script><script src="../docs/script.js"></script><script src="../blog/script.js"></script><script src="../blog/actions/interactions.js"></script><script src="../about/script.js"></script></body></html>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
