@@ -1,50 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme detection
-    const theme = localStorage.getItem('theme');
-    if (theme === 'light') {
-        document.documentElement.classList.add('light');
-    }
+    // Sidebar Toggle for Mobile
+    const sidebar = document.getElementById('docs-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    const toggleBtn = document.getElementById('mobile-sidebar-toggle');
 
-    // Sidebar Mobile Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebarOverlay');
-    const links = sidebar.querySelectorAll('a');
-
-    function toggleMenu() {
-        const isClosed = sidebar.classList.contains('-translate-x-full');
-        if (isClosed) {
+    const toggleDocsMenu = (show) => {
+        if (show) {
+            sidebar.classList.add('active');
             sidebar.classList.remove('-translate-x-full');
-            overlay.classList.remove('hidden');
-            setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-            document.body.style.overflow = 'hidden';
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
         } else {
+            sidebar.classList.remove('active');
             sidebar.classList.add('-translate-x-full');
-            overlay.classList.add('opacity-0');
-            setTimeout(() => overlay.classList.add('hidden'), 300);
-            document.body.style.overflow = '';
+            overlay.classList.add('opacity-0', 'pointer-events-none');
         }
-    }
+    };
 
-    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
-    if (overlay) overlay.addEventListener('click', toggleMenu);
+    if (toggleBtn) toggleBtn.addEventListener('click', () => toggleDocsMenu(true));
+    if (overlay) overlay.addEventListener('click', () => toggleDocsMenu(false));
 
-    // Close sidebar on link click (mobile)
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 768) {
-                toggleMenu();
+    // Smooth scroll for doc links
+    const docLinks = document.querySelectorAll('.doc-link');
+    docLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const offset = 100;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = target.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (window.innerWidth < 768) toggleDocsMenu(false);
+                    
+                    // Update active state
+                    docLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
             }
         });
     });
 
-    // Scroll Spy for Sidebar
-    const sections = document.querySelectorAll('article');
-    const navLinks = document.querySelectorAll('#sidebar nav a');
+    // Load Dynamic Content (Git Guide)
+    const loadGitGuide = async () => {
+        const container = document.getElementById('git-wizard-container');
+        if (!container) return;
 
+        try {
+            const response = await fetch('git-guide/index.html');
+            if (response.ok) {
+                const html = await response.text();
+                container.parentElement.innerHTML = html;
+                
+                // Re-initialize intersection observer for new content
+                const newSection = document.getElementById('git-guide-content');
+                if (newSection) {
+                    observer.observe(newSection.parentElement);
+                }
+            } else {
+                container.innerHTML = '<p class="text-red-400">Failed to load Git Guide content.</p>';
+            }
+        } catch (error) {
+            console.error('Error loading Git guide:', error);
+            container.innerHTML = '<p class="text-red-400">An error occurred while loading the guide.</p>';
+        }
+    };
+
+    // Intersection Observer for Active Navigation
     const observerOptions = {
         root: null,
-        rootMargin: '-20% 0px -60% 0px',
+        rootMargin: '-20% 0px -70% 0px',
         threshold: 0
     };
 
@@ -52,23 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
-                
-                // Remove active class from all links
-                navLinks.forEach(link => {
-                    link.classList.remove('active', 'text-brand-400');
-                    link.classList.add('text-white/60');
+                docLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                 });
-
-                // Add active class to current link
-                const activeLink = document.querySelector(`#sidebar nav a[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active', 'text-brand-400');
-                    activeLink.classList.remove('text-white/60');
-                }
             }
         });
     }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+    // Initial setup for existing sections
+    document.querySelectorAll('#docs-content-root section').forEach(section => observer.observe(section));
+
+    // Load dynamic fragments
+    loadGitGuide();
 });
-          
