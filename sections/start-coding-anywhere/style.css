@@ -1,0 +1,17 @@
+/* Start Coding Anywhere Section Styles */
+.cta-gradient-bg {
+    background: linear-gradient(180deg, var(--surface) 0%, #000000 100%);
+}
+
+.cta-abstract-shape {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.3;
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -20px); }
+}
