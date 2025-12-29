@@ -1,0 +1,115 @@
+<div id="git-guide-content" class="space-y-12">
+    <header class="mb-12">
+        <div class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold tracking-widest mb-6">
+            <i class="fa-solid fa-code-branch"></i> VERSION CONTROL
+        </div>
+        <h2 class="text-4xl font-display font-bold mb-4">Git Mastery Guide</h2>
+        <p class="text-slate text-lg leading-relaxed">
+            Our integrated Git Wizard simplifies version control, allowing you to focus on code while we handle the complexity of the terminal.
+        </p>
+    </header>
+
+    <!-- Opening the Terminal -->
+    <section class="space-y-6">
+        <h3 class="text-2xl font-bold flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-sm text-accent"><i class="fa-solid fa-terminal"></i></span>
+            Opening the Terminal
+        </h3>
+        <p class="text-slate">
+            To begin using Git, you first need to access the integrated terminal. This is your gateway to powerful command-line tools.
+        </p>
+        <div class="bg-surface border border-white/5 rounded-2xl p-6">
+            <ul class="space-y-4">
+                <li class="flex gap-4">
+                    <div class="flex-none w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">1</div>
+                    <p class="text-sm text-slate">Locate the <span class="text-white font-medium">Terminal icon</span> (<i class="fa-solid fa-terminal"></i>) in the bottom navigation bar of the editor.</p>
+                </li>
+                <li class="flex gap-4">
+                    <div class="flex-none w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">2</div>
+                    <p class="text-sm text-slate">Tap the icon to slide up the console interface. You now have full shell access.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Launching the Wizard -->
+    <section class="space-y-6">
+        <h3 class="text-2xl font-bold flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-sm text-purple-400"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            The Git Wizard
+        </h3>
+        <p class="text-slate">
+            Instead of memorizing complex commands like <code>git remote add origin ...</code>, use our automated wizard.
+        </p>
+        <div class="terminal-window rounded-xl overflow-hidden border border-white/10 bg-black shadow-2xl">
+            <div class="bg-zinc-900/50 px-4 py-2 border-b border-white/5 flex items-center justify-between">
+                <span class="text-[10px] text-slate/50 font-mono tracking-widest">WIZARD_PROMPT</span>
+                <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                    <div class="w-2 h-2 rounded-full bg-white/10"></div>
+                </div>
+            </div>
+            <div class="p-6 font-mono text-sm">
+                <div class="flex gap-2 text-accent mb-2">
+                    <span>$</span>
+                    <span class="text-white">git configure</span>
+                </div>
+                <div class="text-slate italic"># or simply...</div>
+                <div class="flex gap-2 text-accent">
+                    <span>$</span>
+                    <span class="text-white">git</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 rounded-2xl bg-accent/5 border border-accent/10">
+            <h4 class="text-sm font-bold text-accent mb-2 tracking-wide uppercase">What the wizard does:</h4>
+            <p class="text-sm text-slate leading-relaxed">
+                The wizard automates repository initialization, user identity configuration (user.name/email), and secure connection to remote providers like GitHub or GitLab.
+            </p>
+        </div>
+    </section>
+
+    <!-- GitHub Token -->
+    <section class="space-y-6">
+        <h3 class="text-2xl font-bold flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-sm text-orange-400"><i class="fa-solid fa-key"></i></span>
+            Authentication
+        </h3>
+        <p class="text-slate">
+            To push code to GitHub, the wizard will ask for a <span class="text-white">Personal Access Token (PAT)</span>. This is more secure than using your password.
+        </p>
+        <div class="bg-surface border border-white/5 rounded-2xl p-8">
+            <h4 class="font-bold mb-4 flex items-center gap-2">
+                <i class="fa-brands fa-github"></i>
+                Generating your Token
+            </h4>
+            <ol class="space-y-4 text-sm text-slate">
+                <li>1. Go to <span class="text-accent">GitHub Settings > Developer Settings</span>.</li>
+                <li>2. Select <span class="text-white">Personal access tokens > Tokens (classic)</span>.</li>
+                <li>3. Click <span class="text-white">"Generate new token"</span>.</li>
+                <li class="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-200">
+                    <i class="fa-solid fa-circle-check mr-2"></i>
+                    <strong>CRITICAL:</strong> Ensure you check the <code class="text-white">'repo'</code> scope to allow project access.
+                </li>
+                <li>4. Copy the token and paste it when the app terminal prompts you.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Best Practices -->
+    <section class="space-y-6">
+        <div class="p-8 rounded-[2rem] bg-gradient-to-br from-surface to-dark border border-white/10">
+            <div class="flex items-start gap-6">
+                <div class="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center text-green-500 shrink-0">
+                    <i class="fa-solid fa-lightbulb text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Pro Tip: Forget manual remotes</h3>
+                    <p class="text-slate text-sm leading-relaxed">
+                        Manual commands like <code>git remote add</code> are generally not needed. The Git Wizard handles your remotes automatically based on the repository URL you provide during the configuration step.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
