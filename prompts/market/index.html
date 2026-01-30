@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner Prompt - Web IDE Market</title>
+    <meta name="description" content="High-performance AI Travel Planner prompt for Web IDE users.">
+    <link rel="icon" href="../../images/favicon/favicon.jpg" type="image/jpeg">
+
+    <!-- Google AdSense -->
+    <!-- Google AdSense Auto-Ads -->
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7032818106673619" crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) - Analytics & Conversion -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17601191424"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17601191424');
+    </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H5XN0H3N96"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H5XN0H3N96');
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=JetBrains+Mono&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        surface: '#0F0F0F',
+                        accent: '#007AFF',
+                        slate: '#94A3B8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="pages/docs/style.css"><link rel="stylesheet" href="pages/terms/style.css"><link rel="stylesheet" href="pages/privacy/style.css"><link rel="stylesheet" href="pages/contact/style.css"><link rel="stylesheet" href="offer-section/style.css"><link rel="stylesheet" href="sections/start-coding-anywhere/style.css"><link rel="stylesheet" href="prompts/market/style.css"></head>
+<body class="bg-dark text-white antialiased selection:bg-accent/30">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html" class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center overflow-hidden">
+                    <img src="../../images/favicon/favicon.jpg" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-display font-bold text-lg tracking-tight">Web IDE</span>
+            </a>
+            <div class="flex items-center gap-6 text-sm font-medium text-slate">
+                <a href="../../index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="../../pages/docs/index.html" class="hover:text-white transition-colors">Docs</a>
+                <a href="https://apps.apple.com/us/app/web-ide-ai-code-editor/id6751813522" class="px-4 py-2 bg-white text-dark rounded-full font-bold hover:bg-accent hover:text-white transition-all">App Store</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="mb-12">
+                <div class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-accent/10 border border-accent/20 text-accent text-[10px] font-bold tracking-widest uppercase mb-6">
+                    <i class="fa-solid fa-sparkles"></i> Featured Prompt
+                </div>
+                <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tight">AI Travel Planner</h1>
+                <p class="text-slate text-lg leading-relaxed">A professional-grade system prompt designed to build complex, multi-destination travel itineraries with budget tracking and real-time activity suggestions.</p>
+            </div>
+
+            <!-- Content Card -->
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-surface border border-white/5 rounded-[2rem] overflow-hidden shadow-2xl">
+                    <div class="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-white/[0.02]">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
+                        </div>
+                        <span class="text-[10px] text-slate font-mono uppercase tracking-widest font-bold">system_prompt.txt</span>
+                        <button id="copy-prompt" class="text-slate hover:text-white transition-colors">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="p-8 md:p-12 font-mono text-sm leading-relaxed text-zinc-300 overflow-x-auto">
+                        <pre id="prompt-text" class="whitespace-pre-wrap">Develop a modern, interactive, one-page web application called "AI Travel Planner" that allows users to input a destination, travel days, and budget, and receive a fully detailed, AI-generated itinerary with images, hotels, and a downloadable PDF. The web app should be visually appealing, responsive, and optimized for performance.
+Requirements
+1. Tech Stack
+Frontend: HTML, Tailwind CSS, JS (ES6+ modules)
+Optional Backend (for advanced AI usage): Node.js / Express
+AI Integration: Google Generative AI (Gemini-2.5-flash-preview)
+PDF Generation: html2pdf.js
+Icons: Phosphor Icons
+Fonts: Google Fonts ("Outfit")
+Image API: Pollinations.ai for scenic travel images
+2. Layout &amp; Sections
+Hero Section
+Full-width gradient background (dark theme: indigo, purple, blue)
+Animated floating background blobs (glassmorphism effect)
+Title: “Explore the Unseen” (gradient text)
+Subtitle: “Visual. Smart. Personalized.”
+Search form:
+Destination (text input)
+Days (select dropdown)
+Budget (select dropdown)
+Submit button with icon
+Content Area
+Initial state: placeholder image &amp; message
+Loading state: spinner &amp; message
+Error message: styled alert box
+Trip results:
+Trip Header: Image, title, summary, cost, days, currency
+Daily Itinerary Tabs: Clickable day buttons
+Daily Content: Day theme image, activities timeline
+Hotels: Cards with image, name, price, rating, description
+Map Preview: Interactive map placeholder
+PDF download button
+3. Styling
+Use Tailwind CSS for responsive design
+Apply Glassmorphism for cards and buttons
+Smooth hover animations, transitions, and fade-in effects
+Custom animations:
+Fade-in on scroll or element load
+Background pulsating blobs in hero
+Hide scrollbar for horizontal tabs (overflow-x-auto + no-scrollbar class)
+4. Functionality
+Form Submission
+Trigger AI generation using Google Generative AI
+Build JSON prompt for AI:
+
+{
+  "trip_title": "string",
+  "summary": "string",
+  "currency": "string",
+  "total_estimated_cost": "string",
+  "daily_plan": [
+    {
+      "day": number,
+      "theme": "string",
+      "best_image_keyword": "string",
+      "activities": [{"time": "string", "activity": "string", "description": "string", "location": "string", "cost": "string"}]
+    }
+  ],
+  "hotels": [
+    {"name": "string", "rating": "string", "price_per_night": "string", "description": "string", "image_keyword": "string"}
+  ]
+}
+Show loader while generating content
+Display error message if API fails
+Render Trip Results
+Trip Header: Show large scenic image + overlay info
+Daily Tabs &amp; Content: Highlight active day, update activities
+Hotels: Display rating, price, and description cards
+Map Preview: Static/interactive placeholder
+PDF Generation: Download full trip details as PDF
+Image Integration
+Use Pollinations.ai for scenic AI-generated images
+Generate images based on keywords (destination, day theme, hotel name)
+UI/UX
+Responsive on mobile, tablet, desktop
+Smooth transitions and hover effects
+Clear separation of content sections
+Accessibility: form labels, readable fonts, contrast
+5. JavaScript Logic
+Modular, clean, readable ES6+ code
+Functions:
+renderTripHeader(data)
+renderDayTabs(days)
+renderDayContent(day)
+renderHotels(hotels)
+switchDay(index)
+downloadPDF()
+State Management:
+currentTripData holds API response
+activeDayIndex tracks currently selected day
+Event Listeners:
+Form submit → generate itinerary
+Day tabs → switch content
+PDF button → generate PDF
+6. Extra Features
+Smooth loading animations
+Clickable day tabs with highlighted active state
+Glass cards for cost, days, and currency
+PDF download with html2pdf.js
+Fallback images if AI API fails
+Output
+Fully interactive, visually appealing AI travel planner
+Works in modern browsers
+AI generates structured JSON → dynamically updates DOM
+Exportable PDF for full itinerary</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <i class="fa-solid fa-bolt text-accent mb-4"></i>
+                    <h4 class="font-bold mb-2">Optimized</h4>
+                    <p class="text-xs text-slate">Fine-tuned for Web IDE App AI Agent models.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <i class="fa-solid fa-shield-check text-green-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Verified</h4>
+                    <p class="text-xs text-slate">Tested against 50+ unique travel scenarios.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-surface border border-white/5">
+                    <i class="fa-solid fa-mobile-screen text-blue-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Mobile Ready</h4>
+                    <p class="text-xs text-slate">Perfect for planning on the go with Web IDE.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-white/5 bg-surface/30">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 bg-accent rounded flex items-center justify-center">
+                    <img src="../../images/favicon/favicon.jpg" alt="Logo" class="w-full h-full object-cover rounded">
+                </div>
+                <span class="font-display font-bold">Web IDE Market</span>
+            </div>
+            <p class="text-xs text-slate uppercase tracking-widest font-bold">© 2026 Web IDE AI. All Rights Reserved.</p>
+            <div class="flex gap-6">
+                <a href="../../index.html" class="text-xs text-slate hover:text-white transition-colors">Home</a>
+                <a href="../../pages/privacy/index.html" class="text-xs text-slate hover:text-white transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script src="assets/js/main.js"></script><script src="assets/js/editor-animation.js"></script><script src="assets/js/components.js"></script><script src="pages/docs/script.js"></script><script src="offer-section/script.js"></script><script src="offer-section/js/utils/timer.js"></script><script src="prompts/market/script.js"></script></body></html>
