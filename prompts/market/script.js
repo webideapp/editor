@@ -11,7 +11,31 @@ document.addEventListener('DOMContentLoaded', () => {
      * Copy to Clipboard Functionality
      * Provides haptic feedback and visual confirmation
      */
-    if (copyBtn && promptText) {
+    // Handle all copy buttons in the market
+    const copyButtons = document.querySelectorAll('.copy-prompt-btn, #copy-prompt');
+    
+    copyButtons.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const container = btn.closest('.relative.group');
+            const textElement = container.querySelector('.prompt-content-text, #prompt-text');
+            
+            if (textElement) {
+                try {
+                    await navigator.clipboard.writeText(textElement.innerText);
+                    const originalIcon = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-check text-green-400"></i>';
+                    showToast('Prompt copied to clipboard!');
+                    setTimeout(() => {
+                        btn.innerHTML = originalIcon;
+                    }, 2000);
+                } catch (err) {
+                    showToast('Failed to copy text', 'error');
+                }
+            }
+        });
+    });
+
+    if (false && copyBtn && promptText) {
         copyBtn.addEventListener('click', async () => {
             try {
                 // Extract text and copy to clipboard
