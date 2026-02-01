@@ -212,6 +212,80 @@ Exportable PDF for full itinerary</pre>
                 </div>
             </div>
 
+            <!-- New Prompt: iOS-Style AI Chat App -->
+            <div class="mt-24 mb-12">
+                <div class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-widest uppercase mb-6">
+                    <i class="fa-solid fa-mobile-screen-button"></i> Application Blueprint
+                </div>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 tracking-tight">iOS-Style AI Chat App</h2>
+                <p class="text-slate text-lg leading-relaxed">Build a production-ready, PWA-enabled AI chatting application with a native iOS aesthetic and persistent memory using LocalDB.</p>
+            </div>
+
+            <div class="relative group mb-20">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-accent/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-surface border border-white/5 rounded-[2rem] overflow-hidden shadow-2xl">
+                    <div class="flex items-center justify-between px-8 py-4 border-b border-white/5 bg-white/[0.02]">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-blue-500/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-blue-500/10"></div>
+                            <div class="w-3 h-3 rounded-full bg-blue-500/5"></div>
+                        </div>
+                        <span class="text-[10px] text-slate font-mono uppercase tracking-widest font-bold">chat_app_system.md</span>
+                        <button class="copy-prompt-btn text-slate hover:text-white transition-colors">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="p-8 md:p-12 font-mono text-sm leading-relaxed text-zinc-300 overflow-x-auto">
+                        <pre class="prompt-content-text whitespace-pre-wrap">You are a senior full-stack engineer and UI/UX designer. Your task is to build a web-based AI chatting application similar to ChatGPT.
+
+Core Requirements:
+1. Interface
+- The app must have an iOS-like interface with smooth, native-feeling UI and animations.
+- The application should be a single-page app focused entirely on the chat experience.
+
+2. Chat Interface
+- Users must be able to chat with an AI in real time.
+- The main screen should be a clean chat view where conversations happen.
+- Messages should appear in a modern, iOS-style chat layout.
+
+3. Conversation History & Memory
+- Use a LocalDB (local database such as IndexedDB or equivalent) to store conversation history.
+- Each chat session must be persisted locally.
+- The AI must be able to recall previous messages within a chat session to maintain conversational context.
+- Users should be able to return to past conversations and continue chatting seamlessly.
+
+4. Conversation History & Navigation
+- Include a side menu (sidebar) similar to ChatGPT.
+- The sidebar must display conversation history.
+- Users should be able to select past conversations from the sidebar.
+- Include a clearly visible “New Chat” button in the sidebar that starts a fresh conversation.
+
+5. Landing / Empty State
+- When there is no active conversation, show a landing state inside the chat view.
+- This landing state should include quick-start prompt suggestions (clickable buttons).
+- Clicking a suggestion should immediately send that prompt to the AI.
+
+6. Backend & AI Integration
+- Set up a backend service to handle AI requests.
+- Integrate the backend with Google Gemini API for AI responses.
+- The API key will be provided separately and must be handled securely.
+- The backend should support passing full conversation context from LocalDB to Gemini for accurate responses.
+
+7. Progressive Web App (PWA)
+- The app must be fully installable as a Progressive Web App (PWA).
+- Include proper web app manifest, icons, and service worker.
+- Optimize for mobile-first usage and iOS-style behavior.
+- When installed, the app should feel like a native iOS application.
+
+8. Overall Experience
+- Prioritize performance, simplicity, and clean design.
+- Match ChatGPT-level usability while keeping the UI minimal and iOS-inspired.
+- Ensure the architecture is scalable and production-ready.</pre>
+                    </div>
+                </div>
+            </div>
+
             <!-- Info Grid -->
             <div class="grid md:grid-cols-3 gap-6 mt-12">
                 <div class="p-6 rounded-2xl bg-surface border border-white/5">
